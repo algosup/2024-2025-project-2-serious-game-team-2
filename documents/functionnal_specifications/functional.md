@@ -370,7 +370,17 @@ We have defined five main categories in agriculture, each representing a key are
 #### 2. Mechanics
 ---
 
+Directly on the map, when zooming into a country, you’ll see a top view of the country with multiple pins placed inside. Each pin represents a specific category, and within the pin, you'll see the corresponding icons we previously discussed, depending on the category.
 
+Example :
+
+| Map Pin  | Icon | 
+|----------|------|
+|![map pin](pictures/icons8-marqueur-50.png)|![metals](pictures/industry/icons8-minerai-de-fer-60.png)|
+
+Directly on the map, when zooming into a country, you’ll see a top view of the country with multiple pins placed inside. Each pin represents a specific category, such as the **Metals Industry**, and inside the pin, you’ll see the corresponding icons associated with that category.
+
+Additionally, the color of each map pin will change based on the ecological **color state** that we defined earlier. The color of the pin reflects the current state of the environment in that specific area (Green, Yellow, Orange, Red, Black), indicating the urgency of intervention or improvement needed.
 
 ---
 
