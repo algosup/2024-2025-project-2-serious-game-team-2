@@ -1,8 +1,50 @@
-# **Functional Specifications**
+# Functional Specifications
 
 ## Table of content
 
-# **Introduction**
+- [Functional Specifications](#functional-specifications)
+  - [Table of content](#table-of-content)
+- [Introduction](#introduction)
+  - [Overview](#overview)
+  - [Project Definition](#project-definition)
+    - [Vision](#vision)
+    - [Objectives](#objectives)
+    - [Scope](#scope)
+      - [In Scope:](#in-scope)
+      - [Out of Scope:](#out-of-scope)
+    - [Target Audience](#target-audience)
+    - [User Personas](#user-personas)
+    - [Deliverables](#deliverables)
+  - [Project Organization](#project-organization)
+    - [Stakeholders](#stakeholders)
+    - [Project Team](#project-team)
+    - [Team Roles](#team-roles)
+- [Functional Requirements](#functional-requirements)
+  - [Serious Game Overview](#serious-game-overview)
+    - [Theme](#theme)
+    - [Game objectives](#game-objectives)
+    - [Player Goals](#player-goals)
+  - [Serious Game Design \& Mechanics](#serious-game-design--mechanics)
+    - [Menu](#menu)
+      - [1. Design](#1-design)
+      - [2. mechanics](#2-mechanics)
+    - [Map](#map)
+      - [1. Design](#1-design-1)
+      - [2. Mechanics](#2-mechanics-1)
+    - [HUD (Heads-Up Display)](#hud-heads-up-display)
+      - [1. Design](#1-design-2)
+      - [2. Mechanics](#2-mechanics-2)
+    - [Pin \& Icon System](#pin--icon-system)
+      - [1. Design](#1-design-3)
+      - [2. Mechanics](#2-mechanics-3)
+- [Non-Functional Requirements](#non-functional-requirements)
+  - [Performance Requirements](#performance-requirements)
+  - [Usability Requirements](#usability-requirements)
+  - [Maintainability Requirements](#maintainability-requirements)
+  - [Portability Requirements](#portability-requirements)
+- [Glossary](#glossary)
+
+# Introduction
 
 ## Overview
 
@@ -26,7 +68,7 @@ Make and design a **serious game** with our own ideas and talk about **climat ch
 ### Scope
 ---
 
-#### **In Scope**:
+#### In Scope:
 
 1. **Game Development**:
     
@@ -57,7 +99,7 @@ Make and design a **serious game** with our own ideas and talk about **climat ch
     - Deliver a **playable prototype** game that demonstrates the full scope of features mentioned above.
 
 
-#### **Out of Scope**:
+#### Out of Scope:
 
 1. **Commercial Release**:
     
@@ -135,7 +177,7 @@ The target audience for this serious game includes individuals aged **14 and abo
 | **Quality Assurance** | Ensures the game meets high standards by testing for bugs, performance issues, and overall functionality across different scenarios. |
 | **Technical Writer** | Responsible for documenting the project and creating user manuals. |
 
-# **Functional Requirements**
+# Functional Requirements
 
 ## Serious Game Overview
 
@@ -184,6 +226,20 @@ Players will need to plan, implement, and adapt their decisions as they strive t
 
 ## Serious Game Design & Mechanics
 
+### Menu
+
+#### 1. Design
+---
+
+The design is really simple, including the name of the game on the top middle of the screen, and buttons **'play'**, **'How to Play'** and **'Quit'**.
+
+![EcoSphere](pictures/EcoSphere.png)
+
+#### 2. mechanics
+---
+
+![FlowchartMenu](pictures/FlowchartMenu.png)
+
 ### Map
 
 #### 1. Design
@@ -194,6 +250,8 @@ Players will need to plan, implement, and adapt their decisions as they strive t
   - Climate and industry indicators.
   - Geopolitical statuses.
 
+![base_map](pictures/base_map.png)
+
 #### 2. Mechanics
 ---
 
@@ -202,6 +260,8 @@ Players will need to plan, implement, and adapt their decisions as they strive t
   - Monitor global **ecological conditions** via map overlays.
   - Track **progress indicators** like CO₂ levels or deforestation rates.
 
+![FlowcharMenu](pictures/FlowchartMap.png) 
+
 ### HUD (Heads-Up Display)
 
 #### 1. Design
@@ -209,33 +269,129 @@ Players will need to plan, implement, and adapt their decisions as they strive t
 
 - A clean, intuitive interface that provides **real-time data** for players to monitor their decisions' impact and plan their next steps.
 - Key HUD elements include:
-**1. Resource Meters**:
-     - **Funds**: Displays the available economic resources for policies, research, and development.
-     - **Global Emissions**: Shows current CO₂ output and how it trends over time.
-     - **Planet Health Indicators**: Tracks metrics like global temperature, deforestation rate, and biodiversity index.
-Country-Specific Data:
-GDP (Gross Domestic Product): Indicates a country’s economic capacity and determines available resources for investments or scientific research.
-Scientific Progress Bar: Visualizes ongoing research activities and their time to completion.
-Player Feedback Panel:
-Shows the outcomes of player decisions in terms of ecological, economic, and geopolitical changes.
-Critical alerts for disasters or urgent matters.
-Map Interaction Menu:
-Allows access to national data, laws, industries, and global overlays.
+
+    **1. Resource Meters**:
+    - **Funds**: Displays the available economic resources for policies, research, and development.
+    - **Global Emissions**: Shows current CO₂ output and how it trends over time.
+    - **Planet Health Indicators**: Tracks metrics like global temperature, deforestation rate, and biodiversity index.
+  
+    **2. Country-Specific Data**:
+    - **GDP** (Gross Domestic Product): Indicates a country’s economic capacity and determines available resources for investments or scientific research.
+    - **Scientific Progress Bar**: Visualizes ongoing research activities and their time to completion.
+  
+    **3. Player Feedback Panel**:
+    - Shows the outcomes of player decisions in terms of **ecological, economic, and geopolitical changes**.
+    - Critical **alerts** for disasters or urgent matters.
+
+    **4. Map Interaction Menu**:
+    - Allows access to national data, laws, industries, and global overlays.
+
+**HUD of the world map:**
+
+![WorldHUD](pictures/WorldMapHUD.png)
+
+**HUD of a country map:**
+
+![CountryHUD](pictures/CountryMapHUD.png)
 
 #### 2. Mechanics
 ---
 
-- Display dynamic feedback from player actions.
-- Provide alerts for critical events, such as ecological disasters or economic collapses.
+- The HUD dynamically updates based on player actions and global events:
+  - **Funds and GDP**:
+    - **GDP** grows or shrinks depending on the nation's policies and industrial activities.
+    - Allocate a percentage of GDP to **scientific research** for technological advancements or sustainable solutions.
+  - **Scientific Research System**:
+    - Players can fund scientists to research **new technologies** or **climate solutions**.
+    - Completed research unlocks tools like **renewable energy technologies**, **carbon capture systems**, or **drought-resistant crops**.
+    - Research projects require time and are influenced by **funding levels** and **geopolitical stability**.
+  - **Planet Health Metrics**:
+    - Real-time feedback on environmental trends to help players assess the effectiveness of their strategies.
+    - Includes visible consequences like rising sea levels, desertification, or ecosystem restoration.
+  - **Alert Notifications**:
+    - Warns players of critical issues such as **natural disasters**, **political unrest**, or **scientific breakthroughs**.
 
-### Pin System
+**Integration of GDP and Research**
+
+- GDP acts as the **financial backbone**:
+  - Players must maintain GDP to fund **research** while minimizing harm to the environment.
+  - Excessive industrial expansion may increase GDP temporarily but lead to higher **emissions** and **ecological degradation**.
+- The **scientific research system** challenges players to:
+  - Prioritize research areas based on current global challenges.
+  - Balance short-term GDP sacrifices with long-term sustainability goals. 
+
+
+
+### Pin & Icon System
 
 #### 1. Design
 ---
 
+
+
 #### 2. Mechanics
 ---
 
-# **Non Functional Requirements** 
 
-# **Glossary**
+
+---
+
+All designs & mechanics can evolve during the development of the serious game.
+All our Information come from the website : [Worldemission.io](https://worldemissions.io/?campaignid=20369193522&adgroupid=155060989647&adid=665839090473&utm_term=co2%20emissions%20by%20country&utm_campaign=World+Emissions+Clock&utm_source=adwords&utm_medium=ppc&hsa_acc=3460487076&hsa_cam=20369193522&hsa_grp=155060989647&hsa_ad=665839090473&hsa_src=g&hsa_tgt=kwd-489531936952&hsa_kw=co2%20emissions%20by%20country&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAiArva5BhBiEiwA-oTnXWDYR0cr3v6u_4X9h-s2HxtYd7UgZNEKtFOlrfGHee3CXUc9_73H2xoCjskQAvD_BwE)
+
+# Non-Functional Requirements
+
+## Performance Requirements
+---
+
+1. **Game Performance**:
+   - The game must maintain a consistent **60 frames per second (FPS)** on mid-tier computers (e.g., with at least 8GB of RAM, 2GB VRAM, and a mid-range CPU).
+   - Loading times for large assets like the map and overlays must not exceed **5 seconds**.
+
+2. **Responsiveness**:
+   - All user interactions, such as map zooming or enacting policies, should have a response time of **under 200ms**.
+
+3. **Scalability**:
+   - The system should handle increasing levels of complexity as more policies, overlays, and events are added without significant degradation in performance.
+
+## Usability Requirements
+---
+
+1. **Intuitive Design**:
+   - The game interface must be easy to navigate for users aged 14 and above, with **clear User Manual** and **contextual tooltips** explaining key features.
+   - Ensure minimal cognitive load by presenting **critical information upfront** and providing an optional **in-depth exploration menu** for advanced players.
+
+## Maintainability Requirements
+---
+
+1. **Modular Codebase**:
+   - Code must be written in a **modular and reusable** way to allow future updates and bug fixes without significant refactoring.
+   - All GDScript files must follow a clear structure, with well-documented functions and consistent naming conventions.
+
+2. **Version Control**:
+   - Use Git for source code management, ensuring all changes are tracked with meaningful commit messages.
+
+More information on the Technical Specification.
+
+## Portability Requirements
+---
+
+1. **Operating System Compatibility**:
+   - The game must run on **Windows** and **macOS** systems.
+   - The game is available on our GitHub.
+
+# Glossary
+
+| **Term**                  | **Definition**                                                                                                                                                                     |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Serious Game**           | A game designed for educational purposes, focusing on teaching players about real-world challenges, such as climate change, while still being engaging and interactive.             |
+| **Godot Engine**           | An open-source game development platform used to create 2D and 3D games.                                                                                                         |
+| **GDScript**               | A high-level, dynamically-typed programming language used in the Godot Engine, optimized for game development.                                                                    |
+| **Zoomable Planisphere**   | A 2D interactive world map that players can zoom in or out to view regions at different levels of detail.                                                                         |
+| **GDP (Gross Domestic Product)** | A measure of a nation's total economic output, used in the game to determine the availability of resources for research, policies, and development.                                   |
+| **Scientific Research System** | A gameplay mechanic allowing players to fund and direct research projects to discover and unlock new climate solutions or technologies.                                          |
+| **CO₂ Levels**             | A metric representing the concentration of carbon dioxide in the atmosphere, a key factor in global warming.                                                                      |
+| **Planet Health Metrics**  | Indicators used to visualize the state of the planet's environment, such as global temperature, biodiversity, and deforestation rates.                                             |
+| **Modular Codebase**       | A software development practice where code is divided into smaller, independent modules, making it easier to update and maintain.                                                  |
+| **Colorblind-Friendly Mode** | A feature that adjusts in-game colors to ensure that colorblind players can distinguish important visual elements.                                                               |
+| **Accessibility**          | Design practices that ensure the game can be played by a wide range of people, including those with disabilities or impairments.                                                  |
