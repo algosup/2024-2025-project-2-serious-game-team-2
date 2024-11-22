@@ -327,6 +327,44 @@ The design is really simple, including the name of the game on the top middle of
 #### 1. Design
 ---
 
+We have 4 categories :
+
+We have defined five main categories in agriculture, each representing a key area that affects the ecological status of a zone. These categories can be upgraded to reduce environmental impact and improve sustainability.
+
+| Agriculture | Description | Icon |
+|-------------|-------------|------|
+| **Livestock** | Represents the impact of livestock farming on the environment, including greenhouse gas emissions, water usage, and land degradation. Upgrades in this category may focus on sustainable livestock practices, waste reduction, and improved animal welfare. | ![godot](pictures/agriculture/icons8-panneau-bovins-60.png) |
+**Crops**            | Covers the production and management of various crops. The focus is on soil health, pesticide use, water conservation, and crop rotation. Upgrades here can lead to reduced chemical runoff and improved resilience to climate change. | ![godot](pictures/agriculture/icons8-champ-50.png) |
+
+<br>
+
+| Transport    | Description                                                                                                                                    | Icon                                             |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Car**      | Represents the environmental impact of personal and small vehicle transportation, including emissions and fuel consumption. Upgrades may focus on reducing carbon output, promoting electric vehicles, and increasing fuel efficiency. | ![car](pictures/transport/icons8-berline-60.png) |
+| **Bus/Truck** | Encompasses larger land vehicles used for public and freight transportation. This category emphasizes emissions reduction, fuel optimization, and transitioning to sustainable energy sources. | ![bus_truck](pictures/transport/icons8-navette-50.png) |
+| **Subway**   | Represents underground or metropolitan rail systems, which generally offer lower emissions per passenger. Improvements in this category could enhance energy efficiency and optimize route planning for reduced impact. | ![subway](pictures/transport/icons8-métro-48.png) |
+| **Boat**     | Focuses on the impact of water-based transport, from cargo ships to personal boats. Key areas include fuel emissions, wastewater management, and transitions to cleaner energy sources. | ![boat](pictures/transport/icons8-yacht-50.png) |
+| **Plane**    | Represents the environmental impact of air travel, which is a significant source of greenhouse gas emissions. Upgrades can include carbon offset programs, fuel efficiency improvements, and investments in alternative fuels. | ![plane](pictures/transport/icons8-décollage-d'avion-50.png) |
+
+<br>
+
+| Energy Systems           | Description                                                                                                          | Icon                                             |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Coal Combustion**      | Electricity production using coal combustion, which results in high carbon emissions and pollution. Upgrades focus on reducing coal dependency and improving efficiency. | ![coal combustion](pictures/energy/icons8-charbon-de-bois-50.png) |
+| **Fossil Fuels**         | General energy production from fossil fuels, such as oil and coal, which contribute to greenhouse gas emissions. Improvements aim to reduce reliance on these non-renewable resources. | ![fossil fuels](pictures/energy/icons8-industrie-pétrolière-50.png) |
+| **Gas** | Electricity production using natural gas, which emits less CO₂ than coal but still has an environmental impact. Upgrades here focus on improving plant efficiency or transitioning to cleaner alternatives. | ![gas](pictures/energy/icons8-usine-50.png) |
+| **Nuclear**              | Electricity production using nuclear energy, which has low greenhouse emissions but involves managing radioactive waste. Enhancements may focus on waste reduction and safety measures. | ![nuclear](pictures/energy/icons8-centrale-nucléaire-50.png) |
+| **Green Energy**         | Renewable energy sources like wind turbines and solar panels, providing clean alternatives to fossil fuels. Upgrades expand renewable energy capacity and efficiency. | ![green energy](pictures/energy/icons8-énergieverte-50.png) |
+
+<br>
+
+| Industry           | Description                                                                                                      | Icon                                             |
+|--------------------|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Metals**         | Encompasses the extraction and processing of metals, which often involves high energy consumption and emissions. Key improvements focus on energy efficiency and reducing industrial waste. | ![metals](pictures/industry/icons8-minerai-de-fer-60.png) |
+| **Chemicals**      | Involves the production of chemicals, which typically requires significant energy input and generates hazardous byproducts. Upgrades may focus on cleaner production methods and waste management. | ![chemicals](pictures/industry/icons8-tube-à-essai-fin-50.png) |
+| **Waste**          | Includes the processing and management of waste materials, often requiring high energy input for waste incineration and disposal. Efforts here focus on improving recycling and reducing environmental impact. | ![waste](pictures/industry/icons8-déchets-50.png) |
+| **Cement**         | The cement industry is a major emitter of CO₂, primarily due to the high energy needs for limestone processing. Enhancements include reducing carbon emissions and improving energy efficiency. | ![cement](pictures/industry/icons8-sac-de-ciment-50.png) |
+| **Other Industry** | Covers various industries that do not fall under the above categories, often characterized by energy-intensive processes. Improvements may target specific energy reductions or emissions control measures. | ![other industry](pictures/industry/icons8-statut-de-connexion-off-50.png) |
 
 
 #### 2. Mechanics
