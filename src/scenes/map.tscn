@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhj1shhjinyce"]
+
+[ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
+[ext_resource type="Script" path="res://scenes/map.gd" id="1_uqkwa"]
+[ext_resource type="Texture2D" uid="uid://bo3q3o1l112k7" path="res://map_data/base.png" id="2_ggiqg"]
+[ext_resource type="Texture2D" uid="uid://dfureyit25atg" path="res://map_data/outline.png" id="3_7r1bj"]
+[ext_resource type="Texture2D" uid="uid://hgkso7ngrj73" path="res://map_data/france.png" id="4_wefht"]
+[ext_resource type="Texture2D" uid="uid://cfww3caidq0rs" path="res://map_data/germany.png" id="6_5kn13"]
+[ext_resource type="Texture2D" uid="uid://c551c3ktirb3k" path="res://map_data/spain.png" id="7_wdjgo"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="8_smofn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uqkwa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="collision" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("1_c0kci")
+centered = false
+
+[node name="base" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("2_ggiqg")
+centered = false
+
+[node name="outline" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("3_7r1bj")
+centered = false
+
+[node name="Node2D" type="Node2D" parent="Node2D"]
+
+[node name="france" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -3)
+texture = ExtResource("4_wefht")
+centered = false
+
+[node name="germany" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(9, -2)
+texture = ExtResource("6_5kn13")
+centered = false
+
+[node name="spain" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(9, -2)
+texture = ExtResource("7_wdjgo")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3284, 1222)
+script = ExtResource("8_smofn")
