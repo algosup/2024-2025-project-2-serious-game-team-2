@@ -105,7 +105,7 @@ func handle_country_click(country_name):
 
 	# Example: Add further logic here
 	if country_name == "France":
-		print("France is clicked! Execute France-specific logic.")
+		get_tree().change_scene_to_file("res://scenes/france_hud.tscn")
 		# Add your France-specific code here
 	elif country_name == "Spain":
 		print("Spain is clicked! Execute Spain-specific logic.")
