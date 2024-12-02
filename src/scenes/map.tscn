@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhj1shhjinyce"]
+[gd_scene load_steps=8 format=3 uid="uid://bhj1shhjinyce"]
 
 [ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
 [ext_resource type="Script" path="res://scenes/map.gd" id="1_uqkwa"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://hgkso7ngrj73" path="res://map_data/france.png" id="4_wefht"]
 [ext_resource type="Texture2D" uid="uid://cfww3caidq0rs" path="res://map_data/germany.png" id="6_5kn13"]
 [ext_resource type="Texture2D" uid="uid://c551c3ktirb3k" path="res://map_data/spain.png" id="7_wdjgo"]
-[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="8_smofn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,22 +43,39 @@ centered = false
 
 [node name="france" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
-position = Vector2(10, -3)
+position = Vector2(10, -2)
 texture = ExtResource("4_wefht")
 centered = false
 
 [node name="germany" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
-position = Vector2(9, -2)
+position = Vector2(10, -2)
 texture = ExtResource("6_5kn13")
 centered = false
 
 [node name="spain" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
-position = Vector2(9, -2)
+position = Vector2(10, -2)
 texture = ExtResource("7_wdjgo")
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3284, 1222)
-script = ExtResource("8_smofn")
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D"]
+offset_left = -484.0
+offset_top = 259.0
+offset_right = -262.0
+offset_bottom = 286.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="Camera2D"]
+offset_left = 268.0
+offset_top = 259.0
+offset_right = 490.0
+offset_bottom = 286.0
+
+[node name="ProgressBar3" type="ProgressBar" parent="Camera2D"]
+offset_left = -96.0
+offset_top = 259.0
+offset_right = 126.0
+offset_bottom = 286.0
