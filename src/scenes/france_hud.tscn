@@ -4,58 +4,59 @@
 [ext_resource type="Texture2D" uid="uid://cgkvvesn7fa74" path="res://hud_data/up_hud.png" id="2_7yeov"]
 [ext_resource type="Texture2D" uid="uid://mwi0dn1ojqtx" path="res://hud_data/france_hud.png" id="2_8iupl"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1149.0
 offset_bottom = 647.0
+metadata/_edit_use_anchors_ = true
 
-[node name="BottomHud" type="Sprite2D" parent="ColorRect"]
+[node name="BottomHud" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 position = Vector2(575, 596)
 scale = Vector2(0.436944, 0.395939)
 texture = ExtResource("1_4epxs")
 
-[node name="UpHud" type="Sprite2D" parent="ColorRect"]
+[node name="UpHud" type="Sprite2D" parent="CanvasLayer/ColorRect"]
 position = Vector2(575, 285.5)
 scale = Vector2(0.437348, 0.448622)
 texture = ExtResource("2_7yeov")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Label"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Label"]
 layout_mode = 0
 offset_left = 114.0
 offset_top = 581.0
 offset_right = 336.0
 offset_bottom = 608.0
+metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar2" type="ProgressBar" parent="Label"]
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer/Label"]
 layout_mode = 0
 offset_left = 866.0
 offset_top = 581.0
 offset_right = 1088.0
 offset_bottom = 608.0
+metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar3" type="ProgressBar" parent="Label"]
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer/Label"]
 layout_mode = 0
 offset_left = 502.0
 offset_top = 581.0
 offset_right = 724.0
 offset_bottom = 608.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Node2D"]
 position = Vector2(732, 297)
 texture = ExtResource("2_8iupl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
 anchor_mode = 0
