@@ -1,87 +1,191 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2xytuuqo0fe"]
+[gd_scene load_steps=17 format=3 uid="uid://b2xytuuqo0fe"]
 
-[ext_resource type="Texture2D" uid="uid://dsthpnkxqquaw" path="res://hud_data/bottom_hud.png" id="1_4epxs"]
-[ext_resource type="Texture2D" uid="uid://cgkvvesn7fa74" path="res://hud_data/up_hud.png" id="2_7yeov"]
+[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="1_14xtx"]
 [ext_resource type="Texture2D" uid="uid://mwi0dn1ojqtx" path="res://hud_data/france_hud.png" id="2_8iupl"]
+[ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_5not3"]
+[ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="4_5d12b"]
+[ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_whxxi"]
+[ext_resource type="Script" path="res://scripts/test_progress_bar.gd" id="5_8aqlp"]
+[ext_resource type="Texture2D" uid="uid://ctkwn6lsp2q6t" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_11.png" id="6_5f7in"]
+[ext_resource type="Texture2D" uid="uid://ueyn4kc0gjx4" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_23.png" id="7_60q4a"]
+[ext_resource type="Texture2D" uid="uid://cy581xpnvku3l" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_32.png" id="8_uo8oq"]
+[ext_resource type="Texture2D" uid="uid://cb7nlds42mpw3" path="res://assets/shop/4.png" id="9_tw0wd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_or3d0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emqyg"]
+texture = ExtResource("6_5f7in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lq0yv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2jka"]
+texture = ExtResource("7_60q4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d3crd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xds25"]
+texture = ExtResource("8_uo8oq")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1149.0
+[node name="Windows" type="ColorRect" parent="."]
+offset_right = 1152.0
 offset_bottom = 647.0
+color = Color(0.329738, 0.661307, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="BottomHud" type="Sprite2D" parent="ColorRect"]
-position = Vector2(575, 596)
-scale = Vector2(0.436944, 0.395939)
-texture = ExtResource("1_4epxs")
+[node name="Bg" type="Sprite2D" parent="Windows"]
+position = Vector2(585.5, 285.5)
+scale = Vector2(0.892912, 0.57458)
+texture = ExtResource("1_14xtx")
 
-[node name="UpHud" type="Sprite2D" parent="ColorRect"]
-position = Vector2(575, 285.5)
-scale = Vector2(0.437348, 0.448622)
-texture = ExtResource("2_7yeov")
+[node name="Bg2" type="Sprite2D" parent="Windows"]
+position = Vector2(586, 598)
+scale = Vector2(0.892912, 0.0808823)
+texture = ExtResource("1_14xtx")
 
-[node name="Label" type="Label" parent="."]
+[node name="4" type="Sprite2D" parent="Windows"]
+position = Vector2(234, 273)
+texture = ExtResource("9_tw0wd")
+
+[node name="back_button" type="Control" parent="Windows"]
+anchors_preset = 0
+offset_left = 1265.0
+offset_top = 98.0
+offset_right = 1483.0
+offset_bottom = 317.0
+
+[node name="back_button" type="TextureButton" parent="Windows/back_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.741
+anchor_top = -0.221
+anchor_right = -0.741
+anchor_bottom = -0.221
+offset_left = -61.462
+offset_top = -8.601
+offset_right = -8.46199
+offset_bottom = 42.399
+texture_normal = ExtResource("3_5not3")
+texture_pressed = ExtResource("4_whxxi")
+texture_hover = ExtResource("4_5d12b")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ProgressBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_8aqlp")
+
+[node name="Label" type="Label" parent="ProgressBar"]
 offset_right = 40.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Label"]
+[node name="Timer" type="Timer" parent="ProgressBar/Label"]
+wait_time = 0.101
+autostart = true
+
+[node name="GDP" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.35
-anchor_right = -0.35
-offset_left = 114.0
-offset_top = 581.0
-offset_right = 336.0
-offset_bottom = 608.0
+anchor_left = 5.275
+anchor_top = 26.0654
+anchor_right = 5.275
+anchor_bottom = 26.0654
+offset_left = -111.0
+offset_top = -13.504
+offset_right = 111.0
+offset_bottom = 13.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxTexture_or3d0")
+theme_override_styles/fill = SubResource("StyleBoxTexture_emqyg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Label/ProgressBar"]
-layout_mode = 0
-offset_left = -50.0
-offset_right = -10.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="ProgressBar/Label/GDP"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.135
+anchor_top = 0.426
+anchor_right = -0.135
+anchor_bottom = 0.426
+offset_left = -20.03
+offset_top = -11.502
+offset_right = 19.97
+offset_bottom = 11.498
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "GDP"
-
-[node name="ProgressBar2" type="ProgressBar" parent="Label"]
-layout_mode = 0
-offset_left = 866.0
-offset_top = 581.0
-offset_right = 1088.0
-offset_bottom = 608.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Label/ProgressBar2"]
-layout_mode = 0
-offset_left = -142.0
-offset_right = -11.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Global Emissions"
-
-[node name="ProgressBar3" type="ProgressBar" parent="Label"]
+[node name="R&D_Progress" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.575
-anchor_right = -0.575
-offset_left = 502.0
-offset_top = 581.0
-offset_right = 724.0
-offset_bottom = 608.0
+anchor_left = 24.75
+anchor_top = 26.0654
+anchor_right = 24.75
+anchor_bottom = 26.0654
+offset_left = -111.0
+offset_top = -13.504
+offset_right = 111.0
+offset_bottom = 13.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxTexture_lq0yv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_q2jka")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Label/ProgressBar3"]
-layout_mode = 0
-offset_left = -116.0
-offset_right = -10.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="ProgressBar/Label/R&D_Progress"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.326982
+anchor_top = 0.5
+anchor_right = -0.326982
+anchor_bottom = 0.5
+offset_left = -65.41
+offset_top = -13.5
+offset_right = 65.59
+offset_bottom = 9.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Global Emissions"
+metadata/_edit_use_anchors_ = true
+
+[node name="Global_Emissions" type="ProgressBar" parent="ProgressBar/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.65
+anchor_top = 26.0654
+anchor_right = 14.65
+anchor_bottom = 26.0654
+offset_left = -111.0
+offset_top = -13.504
+offset_right = 111.0
+offset_bottom = 13.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxTexture_d3crd")
+theme_override_styles/fill = SubResource("StyleBoxTexture_xds25")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ProgressBar/Label/Global_Emissions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.265982
+anchor_top = 0.5
+anchor_right = -0.265982
+anchor_bottom = 0.5
+offset_left = -52.952
+offset_top = -13.5
+offset_right = 53.048
+offset_bottom = 9.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "R&D Progress"
+metadata/_edit_use_anchors_ = true
 
 [node name="France" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="France"]
-position = Vector2(732, 297)
+position = Vector2(795.75, 284.25)
+scale = Vector2(0.974339, 0.985768)
 texture = ExtResource("2_8iupl")
+
+[connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]

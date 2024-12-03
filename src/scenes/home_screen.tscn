@@ -1,0 +1,202 @@
+[gd_scene load_steps=7 format=3 uid="uid://wgv1wi4vpx7k"]
+
+[ext_resource type="Texture2D" uid="uid://bgd8ae1v3ayn0" path="res://assets/menu/bg.png" id="1_er4k0"]
+[ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_eyv0f"]
+[ext_resource type="Texture2D" uid="uid://bshddy6xywoj3" path="res://assets/menu/play.png" id="2_rrmyn"]
+[ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="3_jiqia"]
+[ext_resource type="Texture2D" uid="uid://53r13lt2mav4" path="res://assets/btn/ok.png" id="4_16i72"]
+[ext_resource type="Texture2D" uid="uid://dyu0t3dacykgp" path="res://assets/shop/btn.png" id="4_e60dv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eyv0f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+
+[node name="Bg" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(580, 325.5)
+scale = Vector2(0.755208, 0.317871)
+texture = ExtResource("1_er4k0")
+
+[node name="play" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 12.6
+anchor_top = 4.2
+anchor_right = 16.2
+anchor_bottom = 7.8
+offset_top = -1.52588e-05
+
+[node name="play" type="TextureButton" parent="CanvasLayer/Control/play"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.37
+anchor_right = 0.503
+anchor_bottom = 0.37
+offset_left = -75.4561
+offset_top = -71.76
+offset_right = 76.5439
+offset_bottom = 77.24
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_rrmyn")
+texture_hover = ExtResource("4_16i72")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="settings" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 3.15
+anchor_bottom = 3.0
+offset_top = -2.0
+offset_bottom = 6.99999
+
+[node name="settings" type="TextureButton" parent="CanvasLayer/Control/settings"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -306.0
+offset_right = -449.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_jiqia")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="howtoplay" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 313.0
+offset_top = 249.52
+offset_right = 649.0
+offset_bottom = 358.52
+pivot_offset = Vector2(24, 16)
+
+[node name="howtoplay" type="TextureButton" parent="CanvasLayer/Control/howtoplay"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.519
+anchor_right = 0.597
+anchor_bottom = 0.704
+offset_left = 68.192
+offset_top = -0.312042
+offset_right = -11.744
+offset_bottom = -48.192
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_e60dv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/howtoplay/howtoplay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 56.536
+offset_right = 137.0
+offset_bottom = -51.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "How to play"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="quit" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 409.0
+offset_top = 249.52
+offset_right = 569.0
+offset_bottom = 313.52
+pivot_offset = Vector2(24, 16)
+
+[node name="quit" type="TextureButton" parent="CanvasLayer/Control/quit"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.519
+anchor_right = 0.597
+anchor_bottom = 0.704
+offset_left = 70.192
+offset_top = 71.688
+offset_right = -9.74402
+offset_bottom = 23.808
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_e60dv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/quit/quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 56.536
+offset_right = 137.0
+offset_bottom = -51.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/play/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/settings/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/howtoplay/howtoplay" to="." method="_on_howtoplay_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/quit/quit" to="." method="_on_quit_pressed"]

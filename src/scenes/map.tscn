@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhj1shhjinyce"]
 
 [ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
-[ext_resource type="Script" path="res://scenes/map.gd" id="1_uqkwa"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_uqkwa"]
 [ext_resource type="Texture2D" uid="uid://bo3q3o1l112k7" path="res://map_data/base.png" id="2_ggiqg"]
 [ext_resource type="Texture2D" uid="uid://dfureyit25atg" path="res://map_data/outline.png" id="3_7r1bj"]
 [ext_resource type="Texture2D" uid="uid://hgkso7ngrj73" path="res://map_data/france.png" id="4_wefht"]
