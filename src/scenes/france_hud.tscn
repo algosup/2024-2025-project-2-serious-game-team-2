@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2xytuuqo0fe"]
+[gd_scene load_steps=18 format=3 uid="uid://b2xytuuqo0fe"]
 
+[ext_resource type="Script" path="res://scripts/france_hud.gd" id="1_1rrkh"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="1_14xtx"]
 [ext_resource type="Texture2D" uid="uid://mwi0dn1ojqtx" path="res://hud_data/france_hud.png" id="2_8iupl"]
 [ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_5not3"]
@@ -27,6 +28,7 @@ texture = ExtResource("7_60q4a")
 texture = ExtResource("8_uo8oq")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_1rrkh")
 
 [node name="Windows" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -188,4 +190,6 @@ position = Vector2(795.75, 284.25)
 scale = Vector2(0.974339, 0.985768)
 texture = ExtResource("2_8iupl")
 
+[connection signal="pressed" from="Windows/back_button/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Windows/back_button/back_button" to="ProgressBar" method="_on_back_button_pressed"]
 [connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]

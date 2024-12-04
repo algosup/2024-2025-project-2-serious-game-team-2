@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2cly25odophv"]
+[gd_scene load_steps=7 format=3 uid="uid://d2cly25odophv"]
 
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_v7wr0"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="2_lbyjl"]
 [ext_resource type="Texture2D" uid="uid://cv1vxfrdke5lt" path="res://assets/settings/92.png" id="3_gsf6r"]
 [ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_l0dir"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v7wr0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,8 +26,8 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 645.0
+offset_right = 1160.0
+offset_bottom = 656.0
 color = Color(0.329412, 0.662745, 0, 1)
 
 [node name="Bg" type="Sprite2D" parent="CanvasLayer/Control"]

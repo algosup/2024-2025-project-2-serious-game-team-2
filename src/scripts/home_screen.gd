@@ -1,22 +1,16 @@
 extends Control
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# Ensure the settings page is fully loaded if any setup is required
-	print("Entered settings from: ", settings.prevscene)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _on_settings_pressed() -> void:
+	add_child(Global.settings.instantiate())
+	pass # Replace with function body.
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_play_pressed() -> void:
+	Global.change_scene("res://scenes/map.tscn")
 	pass
-
-
-# Called when the back button is pressed.
-
-
-
-
-func _on_back_button_pressed() -> void:
-	if settings.prevscene != "":
-		get_tree().change_scene(settings.prevscene)
-	else:
-		print("No previous scene to return to!")

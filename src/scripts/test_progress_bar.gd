@@ -16,3 +16,7 @@ func _on_timer_timeout():
 	$Label/GDP.value+=1 # Replace with function body.
 	$Label/"R&D_Progress".value+=1 # Replace with function body.
 	$Label/Global_Emissions.value+=1 # Replace with function body.
+
+
+func _on_back_button_pressed() -> void:
+	pass # Replace with function body.
