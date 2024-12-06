@@ -28,6 +28,8 @@
 
 - [5. Risk Management](#5-risk-management)
 
+- [Appendix](#appendix)
+
 </details>
 <br>
 <br>
