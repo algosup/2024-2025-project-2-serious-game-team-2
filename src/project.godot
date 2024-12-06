@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="ecooo"
-run/main_scene="res://scenes/home_screen.tscn"
+run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,8 +22,13 @@ Global="*res://scripts/global.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="ecooo"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.290196, 0.564706, 0.886275, 1)

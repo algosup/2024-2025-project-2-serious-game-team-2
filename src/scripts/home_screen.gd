@@ -1,6 +1,6 @@
 extends Control
 
-
+	
 func _on_settings_pressed() -> void:
 	add_child(Global.settings.instantiate())
 	pass # Replace with function body.

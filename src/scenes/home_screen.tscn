@@ -1,11 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://wgv1wi4vpx7k"]
+[gd_scene load_steps=10 format=3 uid="uid://wgv1wi4vpx7k"]
 
 [ext_resource type="Texture2D" uid="uid://bgd8ae1v3ayn0" path="res://assets/menu/bg.png" id="1_er4k0"]
 [ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_eyv0f"]
-[ext_resource type="Texture2D" uid="uid://bshddy6xywoj3" path="res://assets/menu/play.png" id="2_rrmyn"]
 [ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="3_jiqia"]
-[ext_resource type="Texture2D" uid="uid://53r13lt2mav4" path="res://assets/btn/ok.png" id="4_16i72"]
-[ext_resource type="Texture2D" uid="uid://dyu0t3dacykgp" path="res://assets/shop/btn.png" id="4_e60dv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32dlt"]
+bg_color = Color(0, 0.607843, 0.309804, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boen1"]
+bg_color = Color(0.0828792, 0.338518, 0.15332, 0.576471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72vxw"]
+bg_color = Color(0.280384, 0.705934, 0.259778, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtta1"]
+bg_color = Color(0.329158, 0.329158, 0.329158, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mid8r"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_2v7ag"]
+Button/styles/focus = SubResource("StyleBoxFlat_32dlt")
+Button/styles/hover = SubResource("StyleBoxFlat_boen1")
+Button/styles/normal = SubResource("StyleBoxFlat_72vxw")
+Button/styles/pressed = SubResource("StyleBoxFlat_xtta1")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_mid8r")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -42,7 +80,7 @@ anchor_right = 16.2
 anchor_bottom = 7.8
 offset_top = -1.52588e-05
 
-[node name="play" type="TextureButton" parent="CanvasLayer/Control/play"]
+[node name="play" type="Button" parent="CanvasLayer/Control/play"]
 top_level = true
 layout_direction = 1
 layout_mode = 1
@@ -52,15 +90,25 @@ anchor_top = 0.37
 anchor_right = 0.503
 anchor_bottom = 0.37
 offset_left = -75.4561
-offset_top = -71.76
-offset_right = 76.5439
-offset_bottom = 77.24
+offset_top = -31.76
+offset_right = 124.544
+offset_bottom = 40.24
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_rrmyn")
-texture_hover = ExtResource("4_16i72")
-ignore_texture_size = true
-stretch_mode = 4
+theme = SubResource("Theme_2v7ag")
+theme_override_colors/font_color = Color(0, 0, 0.878431, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/play/play"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 20.0
+offset_right = 125.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "PLAY
+"
 
 [node name="settings" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -102,24 +150,22 @@ offset_right = 649.0
 offset_bottom = 358.52
 pivot_offset = Vector2(24, 16)
 
-[node name="howtoplay" type="TextureButton" parent="CanvasLayer/Control/howtoplay"]
+[node name="howtoplay" type="Button" parent="CanvasLayer/Control/howtoplay"]
 top_level = true
 layout_direction = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.354
+anchor_left = 0.413
 anchor_top = 0.519
-anchor_right = 0.597
-anchor_bottom = 0.704
-offset_left = 68.192
-offset_top = -0.312042
-offset_right = -11.744
-offset_bottom = -48.192
+anchor_right = 0.587
+anchor_bottom = 0.63
+offset_left = 28.224
+offset_top = -48.312
+offset_right = 27.776
+offset_bottom = -48.24
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_e60dv")
-ignore_texture_size = true
-stretch_mode = 4
+theme = SubResource("Theme_2v7ag")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/howtoplay/howtoplay"]
 layout_mode = 1
@@ -129,9 +175,9 @@ anchor_top = -0.563
 anchor_right = 0.5
 anchor_bottom = 1.437
 offset_left = -140.0
-offset_top = 56.536
+offset_top = 59.536
 offset_right = 137.0
-offset_bottom = -51.464
+offset_bottom = -48.464
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 5
@@ -155,7 +201,7 @@ offset_right = 569.0
 offset_bottom = 313.52
 pivot_offset = Vector2(24, 16)
 
-[node name="quit" type="TextureButton" parent="CanvasLayer/Control/quit"]
+[node name="quit" type="Button" parent="CanvasLayer/Control/quit"]
 top_level = true
 layout_direction = 1
 layout_mode = 1
@@ -164,15 +210,13 @@ anchor_left = 0.354
 anchor_top = 0.519
 anchor_right = 0.597
 anchor_bottom = 0.704
-offset_left = 70.192
-offset_top = 71.688
-offset_right = -9.74402
-offset_bottom = 23.808
+offset_left = 96.192
+offset_top = 31.688
+offset_right = 16.256
+offset_bottom = -16.192
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_e60dv")
-ignore_texture_size = true
-stretch_mode = 4
+theme = SubResource("Theme_2v7ag")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/quit/quit"]
 layout_mode = 1

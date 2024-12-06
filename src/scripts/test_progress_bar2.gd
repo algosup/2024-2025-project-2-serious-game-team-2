@@ -10,9 +10,9 @@ func _ready() -> void:
 
 
 func _on_timer_timeout():
-	$Label/GDP.value+=1 # Replace with function body.
-	$Label/"R&D_progress".value+=1 # Replace with function body.
+	$Label/funds.value+=1 # Replace with function body.
 	$Label/global_emissions.value+=1 # Replace with function body.
+	$Label/planet_health_indicator.value+=1 # Replace with function body.
 
 
 func _on_back_button_pressed() -> void:
