@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2xytuuqo0fe"]
+[gd_scene load_steps=26 format=3 uid="uid://b2xytuuqo0fe"]
 
 [ext_resource type="Script" path="res://scripts/france_hud.gd" id="1_1rrkh"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="1_14xtx"]
@@ -11,9 +11,57 @@
 [ext_resource type="Texture2D" uid="uid://ueyn4kc0gjx4" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_23.png" id="7_60q4a"]
 [ext_resource type="Texture2D" uid="uid://cy581xpnvku3l" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_32.png" id="8_uo8oq"]
 [ext_resource type="Texture2D" uid="uid://cb7nlds42mpw3" path="res://assets/shop/4.png" id="9_tw0wd"]
+[ext_resource type="Texture2D" uid="uid://ce3de587puhfb" path="res://assets/transport/bus.svg" id="13_3xrsd"]
+[ext_resource type="Texture2D" uid="uid://ctlwwvno83687" path="res://assets/energy_systems/nuclear-plant-power-plant-svgrepo-com.svg" id="13_33mtf"]
+[ext_resource type="Texture2D" uid="uid://c1i55ok1xm01o" path="res://assets/transport/car.svg" id="14_2c6nq"]
+[ext_resource type="Texture2D" uid="uid://dtr5lvxhs03h3" path="res://assets/industry/cement.svg" id="15_ieago"]
+[ext_resource type="Texture2D" uid="uid://cjx2fjvliwfhk" path="res://assets/industry/metal.svg" id="16_voe3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5puj"]
+bg_color = Color(0.228471, 0.0535139, 0.0226696, 0.545098)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+expand_margin_left = 100.0
+expand_margin_top = 100.0
+expand_margin_right = 100.0
+expand_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vngnf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02l23"]
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+expand_margin_left = 100.0
+expand_margin_top = 100.0
+expand_margin_right = 100.0
+expand_margin_bottom = 100.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_55ij5"]
+Button/styles/hover = SubResource("StyleBoxFlat_h5puj")
+Button/styles/normal = SubResource("StyleBoxFlat_vngnf")
+Button/styles/pressed = SubResource("StyleBoxFlat_02l23")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emqyg"]
 texture = ExtResource("6_5f7in")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrcf5"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_r1nph"]
+Label/styles/normal = SubResource("StyleBoxFlat_lrcf5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2jka"]
 texture = ExtResource("7_60q4a")
@@ -68,6 +116,117 @@ texture_pressed = ExtResource("4_whxxi")
 texture_hover = ExtResource("4_5d12b")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="France" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="France"]
+show_behind_parent = true
+position = Vector2(674, 171)
+scale = Vector2(0.943235, 0.951613)
+texture = ExtResource("2_8iupl")
+offset = Vector2(117.68, 114.542)
+
+[node name="Nuclear" type="Control" parent="France"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 642.0
+offset_top = 115.0
+offset_right = 682.0
+offset_bottom = 155.0
+
+[node name="Nuclear" type="Button" parent="France/Nuclear"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.05
+anchor_top = 1.625
+anchor_right = 1.05
+anchor_bottom = 1.625
+offset_right = 808.0
+offset_bottom = 808.0
+scale = Vector2(0.05, 0.05)
+theme = SubResource("Theme_55ij5")
+icon = ExtResource("13_33mtf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bus" type="Control" parent="France"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 776.0
+offset_top = 162.0
+offset_right = 816.0
+offset_bottom = 202.0
+
+[node name="Bus" type="Button" parent="France/Bus"]
+offset_right = 800.0
+offset_bottom = 800.0
+scale = Vector2(0.045, 0.045)
+theme = SubResource("Theme_55ij5")
+icon = ExtResource("13_3xrsd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Car" type="Control" parent="France"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 965.0
+offset_top = 194.0
+offset_right = 1005.0
+offset_bottom = 234.0
+
+[node name="Car" type="Button" parent="France/Car"]
+offset_right = 800.0
+offset_bottom = 800.0
+scale = Vector2(0.041875, 0.041875)
+theme = SubResource("Theme_55ij5")
+icon = ExtResource("14_2c6nq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Metal" type="Control" parent="France"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 867.0
+offset_top = 263.0
+offset_right = 907.0
+offset_bottom = 303.0
+
+[node name="Metal" type="Button" parent="France/Metal"]
+offset_right = 870.0
+offset_bottom = 870.0
+scale = Vector2(0.0287499, 0.0287499)
+theme = SubResource("Theme_55ij5")
+icon = ExtResource("16_voe3l")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cement" type="Control" parent="France"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 723.0
+offset_top = 303.0
+offset_right = 763.0
+offset_bottom = 343.0
+
+[node name="Cement" type="Button" parent="France/Cement"]
+offset_right = 800.0
+offset_bottom = 918.0
+scale = Vector2(0.038125, 0.038125)
+theme = SubResource("Theme_55ij5")
+icon = ExtResource("15_ieago")
+metadata/_edit_use_anchors_ = true
+
+[node name="BusTimer" type="Timer" parent="France"]
+one_shot = true
+
+[node name="CarTimer" type="Timer" parent="France"]
+one_shot = true
+
+[node name="CementTimer" type="Timer" parent="France"]
+one_shot = true
+
+[node name="MetalTimer" type="Timer" parent="France"]
+one_shot = true
+
+[node name="NuclearTimer" type="Timer" parent="France"]
+one_shot = true
 
 [node name="ProgressBar" type="Control" parent="."]
 layout_mode = 3
@@ -75,6 +234,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_8aqlp")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar"]
 layout_mode = 0
@@ -102,6 +262,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_emqyg")
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar/Label/GDP"]
 layout_mode = 1
@@ -117,6 +278,19 @@ offset_bottom = 11.498
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "GDP"
 metadata/_edit_use_anchors_ = true
+
+[node name="tooltip" type="Label" parent="ProgressBar/Label/GDP"]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -117.0
+offset_right = 305.0
+offset_bottom = -23.0001
+theme = SubResource("Theme_r1nph")
+text = "Gross Domestic Product:
+Indicates a country’s economic capacity and determines available resources for investment or scientific research."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="global_emissions" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
@@ -149,6 +323,19 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Global Emissions"
 metadata/_edit_use_anchors_ = true
 
+[node name="tooltip2" type="Label" parent="ProgressBar/Label/global_emissions"]
+layout_mode = 0
+offset_left = -94.0
+offset_top = -117.0
+offset_right = 281.0
+offset_bottom = -16.0001
+theme = SubResource("Theme_r1nph")
+text = "Global Emissions: 
+Shows current CO₂ production and its evolution over time."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="R&D_progress" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
 anchors_preset = -1
@@ -180,13 +367,30 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "R&D Progress"
 metadata/_edit_use_anchors_ = true
 
-[node name="France" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="France"]
-position = Vector2(785, 280)
-scale = Vector2(0.943235, 0.951613)
-texture = ExtResource("2_8iupl")
+[node name="tooltip3" type="Label" parent="ProgressBar/Label/R&D_progress"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = -117.0
+offset_right = 255.0
+offset_bottom = -16.0001
+theme = SubResource("Theme_r1nph")
+text = "Research and Development Progress:
+Visualizes ongoing research activities and their completion deadlines."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Windows/back_button/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Windows/back_button/back_button" to="ProgressBar" method="_on_back_button_pressed"]
+[connection signal="pressed" from="France/Nuclear/Nuclear" to="." method="_on_nuclear_pressed"]
+[connection signal="pressed" from="France/Bus/Bus" to="." method="_on_bus_pressed"]
+[connection signal="pressed" from="France/Car/Car" to="." method="_on_car_pressed"]
+[connection signal="pressed" from="France/Metal/Metal" to="." method="_on_metal_pressed"]
+[connection signal="pressed" from="France/Cement/Cement" to="." method="_on_cement_pressed"]
 [connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="ProgressBar/Label/GDP" to="." method="_on_gdp_mouse_entered"]
+[connection signal="mouse_entered" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_exited"]
+[connection signal="mouse_entered" from="ProgressBar/Label/R&D_progress" to="." method="_on_rd_progress_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/R&D_progress" to="." method="_on_rd_progress_mouse_exited"]
+[connection signal="mouse_entered" from="ProgressBar/Label/R&D_progress/tooltip3" to="." method="_on_tooltip_3_mouse_entered"]
