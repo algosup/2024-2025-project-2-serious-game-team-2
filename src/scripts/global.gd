@@ -25,11 +25,10 @@ func _ready():
 
 # Change scenes and adjust music
 func change_scene(scene_path: String) -> void:
-	if scene_path == "res://scenes/home_screen.tscn" :
+	if scene_path == "res://scenes/home_screen.tscn":
 		play_music(home_screen_music)
 	elif scene_path == "res://scenes/map.tscn" or scene_path == "res://scenes/france_hud.tscn":
 		play_music(game_music)
-
 
 	# Change to the requested scene
 	get_tree().change_scene_to_file(scene_path)
@@ -50,7 +49,7 @@ func update_music_volume():
 	# Convert volume from linear scale (0.0 to 1.0) to decibels for AudioStreamPlayer
 	music_player.volume_db = linear_to_db(current_volume)
 
-# Convert linear scale to decibels (helper function if linear_to_db isn't available)
+# Convert linear scale to decibels
 func linear_to_db(value: float) -> float:
 	if value <= 0.0:
 		return -80.0  # Minimum decibel value in Godot

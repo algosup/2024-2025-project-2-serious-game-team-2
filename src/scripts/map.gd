@@ -116,7 +116,6 @@ func handle_country_click(country_name):
 # Properly handle scene changes for settings and home
 func _on_settings_pressed() -> void:
 	add_child(Global.settings.instantiate())
-
 func _on_home_pressed() -> void:
 	# Change the entire scene to home screen
 	Global.change_scene("res://scenes/home_screen.tscn")
