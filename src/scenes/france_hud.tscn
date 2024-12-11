@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2xytuuqo0fe"]
+[gd_scene load_steps=25 format=3 uid="uid://b2xytuuqo0fe"]
 
 [ext_resource type="Script" path="res://scripts/france_hud.gd" id="1_1rrkh"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="1_14xtx"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_5not3"]
 [ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="4_5d12b"]
 [ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_whxxi"]
-[ext_resource type="Script" path="res://scripts/test_progress_bar.gd" id="5_8aqlp"]
 [ext_resource type="Texture2D" uid="uid://ctkwn6lsp2q6t" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_11.png" id="6_5f7in"]
 [ext_resource type="Texture2D" uid="uid://ueyn4kc0gjx4" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_23.png" id="7_60q4a"]
 [ext_resource type="Texture2D" uid="uid://cy581xpnvku3l" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_32.png" id="8_uo8oq"]
@@ -158,6 +157,7 @@ offset_right = 816.0
 offset_bottom = 202.0
 
 [node name="Bus" type="Button" parent="France/Bus"]
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 800.0
 scale = Vector2(0.045, 0.045)
@@ -174,6 +174,7 @@ offset_right = 1005.0
 offset_bottom = 234.0
 
 [node name="Car" type="Button" parent="France/Car"]
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 800.0
 scale = Vector2(0.041875, 0.041875)
@@ -190,6 +191,7 @@ offset_right = 907.0
 offset_bottom = 303.0
 
 [node name="Metal" type="Button" parent="France/Metal"]
+layout_mode = 0
 offset_right = 870.0
 offset_bottom = 870.0
 scale = Vector2(0.0287499, 0.0287499)
@@ -206,6 +208,7 @@ offset_right = 763.0
 offset_bottom = 343.0
 
 [node name="Cement" type="Button" parent="France/Cement"]
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 918.0
 scale = Vector2(0.038125, 0.038125)
@@ -233,7 +236,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("5_8aqlp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar"]
@@ -261,6 +263,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_emqyg")
+value = 80.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
@@ -305,6 +308,7 @@ offset_right = 111.0
 offset_bottom = 13.496
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_q2jka")
+value = 20.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
@@ -349,6 +353,7 @@ offset_right = 111.0
 offset_bottom = 13.496
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_xds25")
+value = 50.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 

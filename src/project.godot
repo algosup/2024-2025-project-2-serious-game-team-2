@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="ecooo"
 
+[editor]
+
+version_control/autoload_on_startup=true
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.290196, 0.564706, 0.886275, 1)

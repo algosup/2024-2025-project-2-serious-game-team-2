@@ -1,9 +1,14 @@
 extends Node2D
 
+@onready var gdp_bar = $ProgressBar/Label/GDP
+@onready var emissions_bar = $ProgressBar/Label/global_emissions
+@onready var rd_bar = $"ProgressBar/Label/R&D_progress"
+
+
 var icons = []  # Array to hold the icons/buttons
 var map_bounds = Rect2(650, 100, 250, 250)  # Adjust to your map area
 var min_spacing = 50  # Minimum distance between buttons
-var tooltip_node  # Reference to the tooltip node
+var tooltip_node
 var tooltip2_node
 var tooltip3_node
 
@@ -37,6 +42,9 @@ func _ready():
 	tooltip2_node.hide()
 	tooltip3_node.hide()
 
+	# Connect signals for tooltips
+	$ProgressBar/Label/GDP.connect("mouse_exited", Callable(self, "_on_gdp_mouse_exited"))
+
 	# Configure timers
 	$France/BusTimer.stop()
 	$France/CarTimer.stop()
@@ -44,11 +52,11 @@ func _ready():
 	$France/MetalTimer.stop()
 	$France/NuclearTimer.stop()
 
-	$France/BusTimer.wait_time = 10  # 10 seconds for Bus
-	$France/CarTimer.wait_time = 15  # 15 seconds for Car
-	$France/CementTimer.wait_time = 20  # 20 seconds for Cement
-	$France/MetalTimer.wait_time = 25  # 25 seconds for Metal
-	$France/NuclearTimer.wait_time = 30  # 30 seconds for Nuclear
+	$France/BusTimer.wait_time = 10
+	$France/CarTimer.wait_time = 15
+	$France/CementTimer.wait_time = 20
+	$France/MetalTimer.wait_time = 25
+	$France/NuclearTimer.wait_time = 30
 
 	# Connect timers to respective signals
 	$France/BusTimer.connect("timeout", Callable(self, "_on_bus_timer_timeout"))
@@ -56,8 +64,9 @@ func _ready():
 	$France/CementTimer.connect("timeout", Callable(self, "_on_cement_timer_timeout"))
 	$France/MetalTimer.connect("timeout", Callable(self, "_on_metal_timer_timeout"))
 	$France/NuclearTimer.connect("timeout", Callable(self, "_on_nuclear_timer_timeout"))
-	# Connect signals for tooltips
-	$ProgressBar/Label/GDP.connect("mouse_exited", Callable(self, "_on_gdp_mouse_exited"))
+
+	
+	
 	# Place icons randomly
 	place_icons_randomly()
 
@@ -67,7 +76,17 @@ func _ready():
 			print("Button: ", icon.name)
 		else:
 			print("Error: Invalid icon!")
+			
+func apply_effects(effects: Dictionary):
+	if effects.has("GDP"):
+		gdp_bar.value = clamp(gdp_bar.value + effects["GDP"], gdp_bar.min_value, gdp_bar.max_value)
+	if effects.has("Emissions"):
+		emissions_bar.value = clamp(emissions_bar.value + effects["Emissions"], emissions_bar.min_value, emissions_bar.max_value)
+	if effects.has("R&D"):
+		rd_bar.value = clamp(rd_bar.value + effects["R&D"], rd_bar.min_value, rd_bar.max_value)
 
+		
+		
 # Place icons randomly on the map
 func place_icons_randomly():
 	var placed_positions = []  # Track already placed positions

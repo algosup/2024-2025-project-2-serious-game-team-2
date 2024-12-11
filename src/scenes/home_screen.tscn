@@ -1,51 +1,51 @@
 [gd_scene load_steps=10 format=3 uid="uid://wgv1wi4vpx7k"]
 
-[ext_resource type="Texture2D" uid="uid://bgd8ae1v3ayn0" path="res://assets/menu/bg.png" id="1_er4k0"]
 [ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_eyv0f"]
+[ext_resource type="VideoStream" path="res://assets/video/output.ogv" id="2_188w5"]
 [ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="3_jiqia"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32dlt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8xap"]
 bg_color = Color(0, 0.607843, 0.309804, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boen1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fua68"]
 bg_color = Color(0.0828792, 0.338518, 0.15332, 0.576471)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72vxw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiktu"]
 bg_color = Color(0.280384, 0.705934, 0.259778, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtta1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uemmh"]
 bg_color = Color(0.329158, 0.329158, 0.329158, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mid8r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ouy7"]
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="Theme" id="Theme_2v7ag"]
-Button/styles/focus = SubResource("StyleBoxFlat_32dlt")
-Button/styles/hover = SubResource("StyleBoxFlat_boen1")
-Button/styles/normal = SubResource("StyleBoxFlat_72vxw")
-Button/styles/pressed = SubResource("StyleBoxFlat_xtta1")
-Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_mid8r")
+Button/styles/focus = SubResource("StyleBoxFlat_e8xap")
+Button/styles/hover = SubResource("StyleBoxFlat_fua68")
+Button/styles/normal = SubResource("StyleBoxFlat_aiktu")
+Button/styles/pressed = SubResource("StyleBoxFlat_uemmh")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_2ouy7")
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,15 +62,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control"]
+clip_contents = true
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 645.0
-
-[node name="Bg" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(580, 325.5)
-scale = Vector2(0.755208, 0.317871)
-texture = ExtResource("1_er4k0")
+offset_right = 5840.0
+offset_bottom = 3360.0
+scale = Vector2(0.2, 0.2)
+stream = ExtResource("2_188w5")
+autoplay = true
+expand = true
+loop = true
 
 [node name="play" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
