@@ -8,6 +8,10 @@
 
 config_version=5
 
+[Mono]
+
+enabled=false
+
 [application]
 
 config/name="ecooo"
@@ -19,6 +23,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+Questions="*res://scripts/questions.gd"
 
 [display]
 
@@ -35,4 +40,5 @@ version_control/autoload_on_startup=true
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.290196, 0.564706, 0.886275, 1)

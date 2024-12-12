@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhj1shhjinyce"]
+[gd_scene load_steps=21 format=3 uid="uid://bhj1shhjinyce"]
 
 [ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_uqkwa"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cfww3caidq0rs" path="res://map_data/germany.png" id="6_5kn13"]
 [ext_resource type="Texture2D" uid="uid://dg48l8wtxqdbk" path="res://map_data/france_green.png" id="6_mmbmj"]
 [ext_resource type="Texture2D" uid="uid://c551c3ktirb3k" path="res://map_data/spain.png" id="7_wdjgo"]
+[ext_resource type="Texture2D" uid="uid://dng21ly7ye1t" path="res://map_data/france_yellow.png" id="8_03bv8"]
 [ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="8_7mxf4"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="9_2apm0"]
+[ext_resource type="Texture2D" uid="uid://chj3jj0qk62vo" path="res://map_data/france_orange.png" id="9_nrb64"]
 [ext_resource type="Texture2D" uid="uid://ctkwn6lsp2q6t" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_11.png" id="10_83bud"]
+[ext_resource type="Texture2D" uid="uid://b5cp0fbytns2b" path="res://map_data/france_red.png" id="10_sfxao"]
 [ext_resource type="Script" path="res://scripts/test_progress_bar2.gd" id="10_yt5y7"]
 [ext_resource type="Texture2D" uid="uid://ueyn4kc0gjx4" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_23.png" id="11_2hm3f"]
 [ext_resource type="Texture2D" uid="uid://cy581xpnvku3l" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_32.png" id="12_7ku00"]
@@ -95,10 +98,28 @@ centered = false
 
 [node name="Node2D" type="Node2D" parent="Node2D"]
 
-[node name="france" type="Sprite2D" parent="Node2D/Node2D"]
+[node name="francegreen" type="Sprite2D" parent="Node2D/Node2D"]
 visible = false
 position = Vector2(10, -2)
 texture = ExtResource("6_mmbmj")
+centered = false
+
+[node name="franceyellow" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("8_03bv8")
+centered = false
+
+[node name="franceorange" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("9_nrb64")
+centered = false
+
+[node name="francered" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("10_sfxao")
 centered = false
 
 [node name="germany" type="Sprite2D" parent="Node2D/Node2D"]
@@ -152,6 +173,8 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_evejx")
 show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
 
 [node name="Label" type="Label" parent="ProgressBar/Label/funds"]
 layout_mode = 1
@@ -183,6 +206,8 @@ offset_bottom = 876.496
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_rixxq")
 show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar/Label/global_emissions"]
@@ -214,6 +239,8 @@ offset_bottom = 876.496
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_5f0oj")
 show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="ProgressBar/Label/planet_health_indicator"]

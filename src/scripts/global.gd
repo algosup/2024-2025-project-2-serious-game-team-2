@@ -9,162 +9,31 @@ var france_hud = preload("res://scenes/france_hud.tscn")
 # Audio Players for music
 var intro_music = preload("res://assets/audio/intro.mp3")
 var home_screen_music = preload("res://assets/audio/home.mp3")
-var game_music = preload("res://assets/audio/game_music.mp3")
+var game_music = preload("res://assets/audio/game_music1.ogg")
 
 var music_player: AudioStreamPlayer
 var current_volume: float = 1.0  # Default volume level (range: 0.0 - 1.0)
 
-# Questions dictionary for each scene
-var questions = {
-	"Bus": [
-		{
-			"text": "A new law about public transport is in discussion. Apply it?",
-			"effects": {
-				"Yes": { "GDP": -5, "R&D": 10, "Emissions": -15 },
-				"No": { "GDP": 2, "R&D": 0, "Emissions": 5 }
-			},
-			"output": {
-				"Yes": "Your choice encourages greener public transport but increases the budget deficit.",
-				"No": "You chose not to apply the law, maintaining the status quo."
-			}
-		},
-		{
-			"text": "Increase funding for public transport?",
-			"effects": {
-				"Yes": { "GDP": -10, "R&D": 5, "Emissions": -20 },
-				"No": { "GDP": 3, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "This funding reduces emissions but creates a larger strain on GDP.",
-				"No": "You chose not to increase funding, keeping the current policy."
-			}
-		},
-		{
-			"text": "Create new bus lanes to reduce traffic congestion?",
-			"effects": {
-				"Yes": { "GDP": -7, "R&D": 5, "Emissions": -10 },
-				"No": { "GDP": 1, "R&D": 0, "Emissions": 3 }
-			},
-			"output": {
-				"Yes": "Bus lanes help reduce congestion but require significant investment.",
-				"No": "No new lanes were built, keeping the current infrastructure."
-			}
-		},
-		{
-			"text": "Provide subsidies for electric buses?",
-			"effects": {
-				"Yes": { "GDP": -15, "R&D": 15, "Emissions": -30 },
-				"No": { "GDP": 5, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "Subsidies help reduce emissions drastically but cost significant GDP.",
-				"No": "No subsidies provided, keeping current emissions unchanged."
-			}
-		}
-	],
-	"Nuclear": [
-		{
-			"text": "Invest in nuclear energy research?",
-			"effects": {
-				"Yes": { "GDP": -15, "R&D": 25, "Emissions": -30 },
-				"No": { "GDP": 5, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "Nuclear research reduces emissions significantly but requires high upfront investment.",
-				"No": "No investment in nuclear research, keeping emissions unchanged."
-			}
-		},
-		{
-			"text": "Extend the lifespan of existing nuclear plants?",
-			"effects": {
-				"Yes": { "GDP": -10, "R&D": 10, "Emissions": -20 },
-				"No": { "GDP": 2, "R&D": 0, "Emissions": 5 }
-			},
-			"output": {
-				"Yes": "Extended lifespan reduces emissions but increases maintenance costs.",
-				"No": "Existing plants remain operational for a limited period."
-			}
-		}
-	],
-	"Car": [
-		{
-			"text": "Introduce tax incentives for electric cars?",
-			"effects": {
-				"Yes": { "GDP": -10, "R&D": 15, "Emissions": -25 },
-				"No": { "GDP": 5, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "Tax incentives promote electric cars, reducing emissions but affecting GDP.",
-				"No": "No incentives provided, leaving emissions unchanged."
-			}
-		},
-		{
-			"text": "Mandate stricter emissions standards for vehicles?",
-			"effects": {
-				"Yes": { "GDP": -5, "R&D": 10, "Emissions": -15 },
-				"No": { "GDP": 2, "R&D": 0, "Emissions": 5 }
-			},
-			"output": {
-				"Yes": "Stricter standards improve air quality but increase manufacturing costs.",
-				"No": "No new standards were implemented, keeping current emissions unchanged."
-			}
-		}
-	],
-	"Cement": [
-		{
-			"text": "Adopt new eco-friendly cement technology?",
-			"effects": {
-				"Yes": { "GDP": -20, "R&D": 20, "Emissions": -10 },
-				"No": { "GDP": 3, "R&D": 0, "Emissions": 5 }
-			},
-			"output": {
-				"Yes": "Eco-friendly cement reduces emissions but significantly impacts GDP.",
-				"No": "No investment in eco-friendly technology, keeping emissions unchanged."
-			}
-		},
-		{
-			"text": "Subsidize green building materials?",
-			"effects": {
-				"Yes": { "GDP": -15, "R&D": 15, "Emissions": -25 },
-				"No": { "GDP": 5, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "Subsidies promote sustainable building practices but cost GDP.",
-				"No": "No subsidies provided, leaving current practices unchanged."
-			}
-		}
-	],
-	"Metal": [
-		{
-			"text": "Subsidize metal recycling programs?",
-			"effects": {
-				"Yes": { "GDP": -8, "R&D": 10, "Emissions": -18 },
-				"No": { "GDP": 3, "R&D": 0, "Emissions": 5 }
-			},
-			"output": {
-				"Yes": "Metal recycling helps emissions but requires moderate investment.",
-				"No": "No subsidies provided, leaving emissions unchanged."
-			}
-		},
-		{
-			"text": "Invest in low-emission steel production?",
-			"effects": {
-				"Yes": { "GDP": -12, "R&D": 20, "Emissions": -30 },
-				"No": { "GDP": 5, "R&D": 0, "Emissions": 10 }
-			},
-			"output": {
-				"Yes": "Low-emission steel production reduces emissions but requires high investment.",
-				"No": "No investment in low-emission production, keeping emissions unchanged."
-			}
-		}
-	]
+# France HUD state and instance
+var france_hud_state = {
+	"GDP": 75.0,
+	"Emissions": 50.0,
+	"R&D": 60.0
 }
+var france_hud_instance = null  # Declare france_hud_instance globally
 
+# Load the questions script
+var Questions = preload("res://scripts/questions.gd")
 
-# Track answered questions
+# Use QUESTIONS from the Questions script
+var questions = Questions.QUESTIONS
+
 var answered_questions = {}
 
 func _ready():
+	# Ensure France HUD state is initialized correctly
+	initialize_france_hud()
+	
 	# Initialize answered questions tracking
 	for key in questions.keys():
 		answered_questions[key] = []
@@ -205,8 +74,36 @@ func update_music_volume():
 func linear_to_db(value: float) -> float:
 	if value <= 0.0:
 		return -80.0
-	return 20.0 * linear_to_db(value)
+	return 20.0 * log(value)
 
+# Save France HUD state
+func save_france_hud_state(gdp, emissions, r_and_d):
+	france_hud_state["GDP"] = gdp
+	france_hud_state["Emissions"] = emissions
+	france_hud_state["R&D"] = r_and_d
+
+# Load France HUD state
+func load_france_hud_state() -> Dictionary:
+	return france_hud_state  # Return the stored state for GDP, Emissions, and R&D
+
+# Initialize France HUD state and instance
+func initialize_france_hud():
+	france_hud_instance = france_hud.instantiate()
+	get_tree().root.add_child.call_deferred(france_hud_instance)
+	france_hud_instance.hide()  # Hide unless explicitly displayed later
+	print("France HUD successfully initialized.")
+	
+# Get values for GDP and emissions from France HUD
+func get_france_hud_values() -> Dictionary:
+	if france_hud_instance:
+		var gdp_value = france_hud_state["GDP"]
+		var emissions_value = france_hud_state["Emissions"]
+		return {"GDP": gdp_value, "Emissions": emissions_value}
+	else:
+		print("Error: France HUD instance not found.")
+		return {"GDP": 0, "Emissions": 0}
+
+# Get random question
 func get_random_question(scene: String) -> Dictionary:
 	if scene in questions:
 		var available_questions = []

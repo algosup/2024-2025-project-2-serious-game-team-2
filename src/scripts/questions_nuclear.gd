@@ -39,10 +39,12 @@ func apply_question_effects(choice: String):
 		effects_label.text = effects_text
 		effects_label.visible = true
 
-		# Apply effects to progress bars
-		var france_hud = get_node("/root/Node2D")  # Adjusted path to match the root Node2D
+		# Apply effects to progress bars in france_hud
+		var france_hud = get_node("/root/Node2D")  # Adjust path
 		if france_hud and france_hud.has_method("apply_effects"):
 			france_hud.apply_effects(effects)
+		else:
+			print("Error: FranceHUD not found or apply_effects method missing.")
 
 	# Hide the buttons and question label after a choice is made
 	yes_button.visible = false
@@ -50,6 +52,7 @@ func apply_question_effects(choice: String):
 	question_label.visible = false
 
 
+
 func _on_back_button_nuclear_pressed() -> void:
 	queue_free()
-	
+	pass # Replace with function body.

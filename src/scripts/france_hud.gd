@@ -3,9 +3,13 @@ extends Node2D
 @onready var gdp_bar = $ProgressBar/Label/GDP
 @onready var emissions_bar = $ProgressBar/Label/global_emissions
 @onready var rd_bar = $"ProgressBar/Label/R&D_progress"
-
+@onready var gdp_value_label = $ProgressBar/Label/GDP/GDPValue
+@onready var emissions_value_label = $ProgressBar/Label/global_emissions/EmissionsValue
+@onready var rd_value_label = $"ProgressBar/Label/R&D_progress/RDValue"
 
 var icons = []  # Array to hold the icons/buttons
+var timeout_timers = {}  # Dictionary to hold timeout timers for each icon
+var reappear_timers = {}  # Dictionary to hold reappear timers for each icon
 var map_bounds = Rect2(650, 100, 250, 250)  # Adjust to your map area
 var min_spacing = 50  # Minimum distance between buttons
 var tooltip_node
@@ -31,8 +35,19 @@ var button_states = {
 }
 
 func _ready():
+	# Ensure the timer is running
+	$GDP_Timer.start()
+
+	# Load the saved state when the HUD is opened
+	var saved_state = Global.load_france_hud_state()
+	gdp_bar.value = saved_state["GDP"]
+	emissions_bar.value = saved_state["Emissions"]
+	rd_bar.value = saved_state["R&D"]
+	
 	# Initialize the icons
 	icons = [$France/Bus, $France/Nuclear, $France/Car, $France/Cement, $France/Metal]
+	# Connect signals for tooltips
+	$ProgressBar/Label/GDP.connect("mouse_exited", Callable(self, "_on_gdp_mouse_exited"))
 
 	# Reference tooltip nodes
 	tooltip_node = $ProgressBar/Label/GDP/tooltip
@@ -42,51 +57,99 @@ func _ready():
 	tooltip2_node.hide()
 	tooltip3_node.hide()
 
-	# Connect signals for tooltips
-	$ProgressBar/Label/GDP.connect("mouse_exited", Callable(self, "_on_gdp_mouse_exited"))
+	# Initialize the progress bar value labels
+	update_progress_label(gdp_bar, gdp_value_label)
+	update_progress_label(emissions_bar, emissions_value_label)
+	update_progress_label(rd_bar, rd_value_label)
 
-	# Configure timers
-	$France/BusTimer.stop()
-	$France/CarTimer.stop()
-	$France/CementTimer.stop()
-	$France/MetalTimer.stop()
-	$France/NuclearTimer.stop()
-
-	$France/BusTimer.wait_time = 10
-	$France/CarTimer.wait_time = 15
-	$France/CementTimer.wait_time = 20
-	$France/MetalTimer.wait_time = 25
-	$France/NuclearTimer.wait_time = 30
-
-	# Connect timers to respective signals
-	$France/BusTimer.connect("timeout", Callable(self, "_on_bus_timer_timeout"))
-	$France/CarTimer.connect("timeout", Callable(self, "_on_car_timer_timeout"))
-	$France/CementTimer.connect("timeout", Callable(self, "_on_cement_timer_timeout"))
-	$France/MetalTimer.connect("timeout", Callable(self, "_on_metal_timer_timeout"))
-	$France/NuclearTimer.connect("timeout", Callable(self, "_on_nuclear_timer_timeout"))
-
-	
-	
 	# Place icons randomly
 	place_icons_randomly()
 
-	# Debug output to confirm icons are loaded
+	# Setup timers for icons
 	for icon in icons:
 		if icon:
-			print("Button: ", icon.name)
-		else:
-			print("Error: Invalid icon!")
-			
+			setup_timeout_timer(icon)
+
+func setup_timeout_timer(icon):
+	var timeout_timer = Timer.new()
+	timeout_timer.wait_time = randf_range(10.0, 30.0)  # Random timeout between 10 and 30 seconds
+	timeout_timer.one_shot = true
+	add_child(timeout_timer)
+	timeout_timers[icon] = timeout_timer  # Link the timer with the icon
+	timeout_timer.connect("timeout", Callable(self, "_on_icon_timeout").bind(icon))  # Bind the icon to the timeout signal
+	timeout_timer.start()
+
+func setup_reappear_timer(icon, short_delay: bool):
+	var reappear_timer = Timer.new()
+	if short_delay:
+		reappear_timer.wait_time = randf_range(5.0, 15.0)  # Short delay for clicked icons
+	else:
+		reappear_timer.wait_time = randf_range(20.0, 40.0)  # Long delay for timeout-wiped icons
+	reappear_timer.one_shot = true
+	add_child(reappear_timer)
+	reappear_timers[icon] = reappear_timer
+	reappear_timer.connect("timeout", Callable(self, "_on_icon_reappear").bind(icon))
+	reappear_timer.start()
+
+func _on_icon_timeout(icon):
+	if icon in timeout_timers:
+		timeout_timers[icon].queue_free()  # Remove the timeout timer
+		timeout_timers.erase(icon)
+	icon.visible = false  # Hide the icon
+	apply_negative_effects(icon.name)  # Apply negative effects for the missed icon
+	setup_reappear_timer(icon, false)  # Set a long delay for timeout-wiped icons
+
+func handle_icon_click(icon):
+	# Handle the icon click event
+	if icon in timeout_timers:
+		timeout_timers[icon].queue_free()  # Remove the timeout timer
+		timeout_timers.erase(icon)  # Clear it from the dictionary
+	icon.visible = false  # Hide the icon
+	setup_reappear_timer(icon, true)  # Start a short reappear timer for clicked icons
+
+func _on_icon_reappear(icon):
+	if icon in reappear_timers:
+		reappear_timers[icon].queue_free()  # Remove the reappear timer
+		reappear_timers.erase(icon)  # Clear it from the dictionary
+	# Randomize the icon's new position and make it visible again
+	var new_position = generate_unique_position([])
+	icon.position = new_position
+	icon.visible = true
+	setup_timeout_timer(icon)  # Reset the timeout timer for the reappeared icon
+
+func apply_negative_effects(icon_name):
+	var negative_effects = {}
+	match icon_name:
+		"Bus":
+			negative_effects = {"GDP": -5, "Emissions": 10}
+		"Car":
+			negative_effects = {"GDP": -3, "Emissions": 5}
+		"Cement":
+			negative_effects = {"GDP": -7, "Emissions": 8}
+		"Metal":
+			negative_effects = {"GDP": -4, "Emissions": 6}
+		"Nuclear":
+			negative_effects = {"R&D": -10}
+
+	apply_effects(negative_effects)
+
 func apply_effects(effects: Dictionary):
 	if effects.has("GDP"):
 		gdp_bar.value = clamp(gdp_bar.value + effects["GDP"], gdp_bar.min_value, gdp_bar.max_value)
+		update_progress_label(gdp_bar, gdp_value_label)
 	if effects.has("Emissions"):
 		emissions_bar.value = clamp(emissions_bar.value + effects["Emissions"], emissions_bar.min_value, emissions_bar.max_value)
+		update_progress_label(emissions_bar, emissions_value_label)
 	if effects.has("R&D"):
 		rd_bar.value = clamp(rd_bar.value + effects["R&D"], rd_bar.min_value, rd_bar.max_value)
+		update_progress_label(rd_bar, rd_value_label)
 
-		
-		
+func update_progress_label(progress_bar: ProgressBar, label_node: Label):
+	if progress_bar and label_node:
+		var percentage = progress_bar.value / progress_bar.max_value * 100.0
+		percentage = floor(percentage * 10 + 0.5) / 10  # Round to 1 decimal place
+		label_node.text = str(percentage) + "%"
+
 # Place icons randomly on the map
 func place_icons_randomly():
 	var placed_positions = []  # Track already placed positions
@@ -95,7 +158,7 @@ func place_icons_randomly():
 			var new_position = generate_unique_position(placed_positions)
 			icon.position = new_position
 			placed_positions.append(new_position)  # Prevent overlap
-			icon.visible = true  # Ensure visibility
+			icon.visible = true
 		else:
 			print("Error: Icon is not valid!")
 
@@ -121,8 +184,16 @@ func generate_unique_position(placed_positions: Array) -> Vector2:
 	print("Warning: Couldn't find a unique position after max attempts.")
 	return Vector2(
 		map_bounds.position.x + randi() % int(map_bounds.size.x),
-		map_bounds.position.y + randi() % int(map_bounds.size.y)
+		map_bounds.position.y + map_bounds.size.y
 	)
+
+
+
+
+
+
+
+
 
 # Instantiate a scene dynamically
 func instantiate_scene(button_name: String, button_node):
@@ -222,6 +293,13 @@ func _on_rd_progress_mouse_entered() -> void:
 func _on_rd_progress_mouse_exited() -> void:
 	tooltip3_node.hide()
 
-# Back button logic
 func _on_back_button_pressed() -> void:
+	Global.save_france_hud_state(gdp_bar.value, emissions_bar.value, rd_bar.value)
 	Global.change_scene("res://scenes/map.tscn")
+
+
+
+func _on_gdp_timer_timeout() -> void:
+		# Increment GDP by 1 every 5 seconds
+	gdp_bar.value += 1
+	update_progress_label(gdp_bar, gdp_value_label)  # Update the GDP label

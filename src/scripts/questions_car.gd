@@ -27,6 +27,7 @@ func apply_question_effects(choice: String):
 		# Determine effects and output based on choice
 		var effects = current_question["effects"].get(choice, {})
 		var output = current_question["output"].get(choice, "No additional information.")
+
 		# Display the effects of the choice
 		var effects_text = choice + " selected.\n"
 		effects_text += output + "\n\n"
@@ -38,16 +39,17 @@ func apply_question_effects(choice: String):
 		effects_label.text = effects_text
 		effects_label.visible = true
 
-		# Apply effects to progress bars
-		var france_hud = get_node("/root/Node2D")  # Adjusted path to match the root Node2D
+		# Apply effects to progress bars in france_hud
+		var france_hud = get_node("/root/Node2D")  # Adjust path
 		if france_hud and france_hud.has_method("apply_effects"):
 			france_hud.apply_effects(effects)
+		else:
+			print("Error: FranceHUD not found or apply_effects method missing.")
 
 	# Hide the buttons and question label after a choice is made
 	yes_button.visible = false
 	no_button.visible = false
 	question_label.visible = false
-
 
 
 
