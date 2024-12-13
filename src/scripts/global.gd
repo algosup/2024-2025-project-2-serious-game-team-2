@@ -18,7 +18,12 @@ var current_volume: float = 1.0  # Default volume level (range: 0.0 - 1.0)
 var france_hud_state = {
 	"GDP": 75.0,
 	"Emissions": 50.0,
-	"R&D": 60.0
+	"R&D": 60.0,
+	"BusValue": 50.0,
+	"CarValue": 50.0,
+	"CementValue": 50.0,
+	"MetalValue": 50.0,
+	"NuclearValue": 50.0
 }
 var france_hud_instance = null  # Declare france_hud_instance globally
 
@@ -77,14 +82,19 @@ func linear_to_db(value: float) -> float:
 	return 20.0 * log(value)
 
 # Save France HUD state
-func save_france_hud_state(gdp, emissions, r_and_d):
+func save_france_hud_state(gdp, emissions, r_and_d, bus_value, car_value, cement_value, metal_value, nuclear_value):
 	france_hud_state["GDP"] = gdp
 	france_hud_state["Emissions"] = emissions
 	france_hud_state["R&D"] = r_and_d
+	france_hud_state["BusValue"] = bus_value
+	france_hud_state["CarValue"] = car_value
+	france_hud_state["CementValue"] = cement_value
+	france_hud_state["MetalValue"] = metal_value
+	france_hud_state["NuclearValue"] = nuclear_value
 
 # Load France HUD state
 func load_france_hud_state() -> Dictionary:
-	return france_hud_state  # Return the stored state for GDP, Emissions, and R&D
+	return france_hud_state  # Return the stored state for GDP, Emissions, R&D, and individual values
 
 # Initialize France HUD state and instance
 func initialize_france_hud():
@@ -96,12 +106,10 @@ func initialize_france_hud():
 # Get values for GDP and emissions from France HUD
 func get_france_hud_values() -> Dictionary:
 	if france_hud_instance:
-		var gdp_value = france_hud_state["GDP"]
-		var emissions_value = france_hud_state["Emissions"]
-		return {"GDP": gdp_value, "Emissions": emissions_value}
+		return france_hud_state
 	else:
 		print("Error: France HUD instance not found.")
-		return {"GDP": 0, "Emissions": 0}
+		return france_hud_state
 
 # Get random question
 func get_random_question(scene: String) -> Dictionary:

@@ -57,7 +57,7 @@ corner_radius_bottom_left = 15
 [sub_resource type="Theme" id="Theme_m70nt"]
 Button/styles/normal = SubResource("StyleBoxFlat_xeqty")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_6cuw6")
 
 [node name="Windows" type="ColorRect" parent="."]
@@ -206,7 +206,7 @@ offset_top = 70.0
 offset_right = 1092.0
 offset_bottom = 324.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
 
 [node name="questions" type="Label" parent="."]

@@ -3,7 +3,7 @@ extends Node2D
 @onready var question_label = $questions
 @onready var yes_button = $yes/yes
 @onready var no_button = $no/no
-@onready var effects_label = $effects  # Add a Label to display effects.
+@onready var effects_label = $effects
 
 var current_question: Dictionary
 
@@ -33,14 +33,14 @@ func apply_question_effects(choice: String):
 		effects_text += output + "\n\n"
 		effects_text += "GDP: " + str(effects.get("GDP", 0)) + "\n"
 		effects_text += "R&D Progress: " + str(effects.get("R&D", 0)) + "\n"
-		effects_text += "Global Emissions: " + str(effects.get("Emissions", 0)) + "\n"
+		effects_text += "MetalValue: " + str(effects.get("MetalValue", 0)) + "\n"
 
 		# Update the effects label text
 		effects_label.text = effects_text
 		effects_label.visible = true
 
 		# Apply effects to progress bars in france_hud
-		var france_hud = get_node("/root/Node2D")  # Adjust path
+		var france_hud = get_node("/root/Node2D")  # Adjust path if needed
 		if france_hud and france_hud.has_method("apply_effects"):
 			france_hud.apply_effects(effects)
 		else:
@@ -50,6 +50,7 @@ func apply_question_effects(choice: String):
 	yes_button.visible = false
 	no_button.visible = false
 	question_label.visible = false
+
 
 
 
