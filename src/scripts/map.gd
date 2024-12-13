@@ -19,7 +19,9 @@ var _drag_distance: float = 0.0  # Total distance moved
 @onready var _germany_sprite = $Node2D/Node2D/germany
 @onready var _spain_sprite = $Node2D/Node2D/spain
 @onready var _label = $Label
-
+var tooltip_node
+var tooltip2_node
+var tooltip3_node
 # Mapping of colors to countries
 const COUNTRY_MAP = {
 	1: "France",
@@ -48,6 +50,14 @@ var button_states = {
 }
 
 func _ready():
+		# Reference tooltip nodes
+	tooltip_node = $ProgressBar/Label/funds/tooltip
+	tooltip2_node = $ProgressBar/Label/global_emissions/tooltip2
+	tooltip3_node = $ProgressBar/Label/planet_health_indicator/tooltip3
+	tooltip_node.hide()
+	tooltip2_node.hide()
+	tooltip3_node.hide()
+	
 	if _collision_sprite.texture and _collision_sprite.texture is Texture2D:
 		_collision_image = _collision_sprite.texture.get_image()
 	else:
@@ -190,6 +200,7 @@ func handle_country_click(country_name):
 
 		if country_name == "France":
 			Global.change_scene("res://scenes/france_hud.tscn")
+			
 		elif country_name == "Spain":
 			print("Spain clicked!")
 		elif country_name == "Germany":
@@ -197,6 +208,26 @@ func handle_country_click(country_name):
 # Properly handle scene changes for settings and home
 func _on_settings_pressed() -> void:
 	add_child(Global.settings.instantiate())
+	
 func _on_home_pressed() -> void:
 	# Change the entire scene to home screen
 	Global.change_scene("res://scenes/home_screen.tscn")
+	
+
+func _on_planet_health_indicator_mouse_entered() -> void:
+	tooltip3_node.show()
+
+func _on_planet_health_indicator_mouse_exited() -> void:
+	tooltip3_node.hide()
+
+func _on_global_emissions_mouse_entered() -> void:
+	tooltip2_node.show()
+
+func _on_global_emissions_mouse_exited() -> void:
+	tooltip2_node.hide()
+	
+func _on_funds_mouse_entered() -> void:
+	tooltip_node.show()
+
+func _on_funds_mouse_exited() -> void:
+	tooltip_node.hide()

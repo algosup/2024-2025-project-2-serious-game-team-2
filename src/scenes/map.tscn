@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhj1shhjinyce"]
+[gd_scene load_steps=27 format=3 uid="uid://bhj1shhjinyce"]
 
 [ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="1_uqkwa"]
@@ -21,11 +21,38 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evejx"]
 texture = ExtResource("10_83bud")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrcf5"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_bokre"]
+Label/styles/normal = SubResource("StyleBoxFlat_lrcf5")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rixxq"]
 texture = ExtResource("11_2hm3f")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca24t"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_nwamn"]
+Label/styles/normal = SubResource("StyleBoxFlat_ca24t")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5f0oj"]
 texture = ExtResource("12_7ku00")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2qht"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_h15mt"]
+Label/styles/normal = SubResource("StyleBoxFlat_q2qht")
 
 [node name="Control2" type="Control"]
 layout_mode = 3
@@ -192,6 +219,17 @@ text = "Funds
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="tooltip" type="Label" parent="ProgressBar/Label/funds"]
+offset_left = -69.0
+offset_top = -117.0
+offset_right = 306.0
+offset_bottom = -16.0
+theme = SubResource("Theme_bokre")
+text = "Under Development"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="global_emissions" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
 anchors_preset = -1
@@ -224,6 +262,17 @@ offset_bottom = 9.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Global Emissions"
 metadata/_edit_use_anchors_ = true
+
+[node name="tooltip2" type="Label" parent="ProgressBar/Label/global_emissions"]
+offset_left = -94.0
+offset_top = -117.0
+offset_right = 281.0
+offset_bottom = -16.0001
+theme = SubResource("Theme_nwamn")
+text = "Under Development"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="planet_health_indicator" type="ProgressBar" parent="ProgressBar/Label"]
 layout_mode = 1
@@ -258,6 +307,37 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Planet Health Indicator"
 metadata/_edit_use_anchors_ = true
 
+[node name="tooltip3" type="Label" parent="ProgressBar/Label/planet_health_indicator"]
+offset_left = -95.0
+offset_top = -117.0
+offset_right = 280.0
+offset_bottom = -16.0001
+theme = SubResource("Theme_h15mt")
+text = "Under Development"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2705.0
+offset_top = 975.0
+offset_right = 3055.0
+offset_bottom = 1139.0
+theme_override_font_sizes/font_size = 11
+text = "Health State:
+🟢 Low Emissions: The country is within sustainable emission levels.  
+🟡 Moderate Emissions: Emissions are rising and require attention.  
+🟠 High Emissions: Emissions are critical, action is urgently needed.  
+🔴 Severe Emissions: Extremely high emissions, immediate intervention required."
+autowrap_mode = 2
+
 [connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="home" to="." method="_on_home_pressed"]
 [connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="ProgressBar/Label/funds" to="." method="_on_funds_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/funds" to="." method="_on_funds_mouse_exited"]
+[connection signal="mouse_entered" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_exited"]
+[connection signal="mouse_entered" from="ProgressBar/Label/planet_health_indicator" to="." method="_on_planet_health_indicator_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/planet_health_indicator" to="." method="_on_planet_health_indicator_mouse_exited"]

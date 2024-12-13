@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2xytuuqo0fe"]
+[gd_scene load_steps=28 format=3 uid="uid://b2xytuuqo0fe"]
 
 [ext_resource type="Script" path="res://scripts/france_hud.gd" id="1_1rrkh"]
 [ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="1_14xtx"]
@@ -53,14 +53,14 @@ Button/styles/pressed = SubResource("StyleBoxFlat_02l23")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rhcn"]
 texture = ExtResource("6_5f7in")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrcf5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08j2f"]
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="Theme" id="Theme_r1nph"]
-Label/styles/normal = SubResource("StyleBoxFlat_lrcf5")
+Label/styles/normal = SubResource("StyleBoxFlat_08j2f")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q2jka"]
 texture = ExtResource("7_60q4a")
@@ -70,6 +70,19 @@ texture = ExtResource("8_uo8oq")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emqyg"]
 texture = ExtResource("7_60q4a")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1607t"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_pvqwv"]
+Label/styles/normal = SubResource("StyleBoxFlat_1607t")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1rrkh")
@@ -704,6 +717,18 @@ offset_bottom = 131.0
 theme_override_font_sizes/font_size = 36
 text = "Country Data"
 
+[node name="Label" type="Label" parent="."]
+offset_left = 609.0
+offset_top = 227.0
+offset_right = 1032.0
+offset_bottom = 285.0
+theme = SubResource("Theme_pvqwv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Click on icons to play"
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="Windows/back_button/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Windows/back_button/back_button" to="ProgressBar" method="_on_back_button_pressed"]
 [connection signal="pressed" from="France/Nuclear/Nuclear" to="." method="_on_nuclear_pressed"]
@@ -718,3 +743,4 @@ text = "Country Data"
 [connection signal="mouse_entered" from="ProgressBar/R&D_progress" to="." method="_on_rd_progress_mouse_entered"]
 [connection signal="mouse_exited" from="ProgressBar/R&D_progress" to="." method="_on_rd_progress_mouse_exited"]
 [connection signal="timeout" from="GDP_Timer" to="." method="_on_gdp_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -18,6 +18,9 @@ extends Node2D
 @onready var metal_value_label = $countrydata/Metal/MetalValue
 @onready var nuclear_value_label = $countrydata/Nuclear/NuclearValue
 
+@onready var popup_label = $Label
+@onready var popup_timer = $Timer  # Replace with the correct path to your timer node
+
 var icons = []  # Array to hold the icons/buttons
 var map_bounds = Rect2(650, 100, 250, 250)  # Adjust to your map area
 var min_spacing = 50  # Minimum distance between buttons
@@ -44,6 +47,12 @@ var button_states = {
 }
 
 func _ready():
+	popup_label.visible = false  # Ensure the label is hidden initially
+
+	# Show the label when the scene is loaded
+	popup_label.visible = true
+	popup_timer.start(3)  # Start the timer for 30 seconds
+
 	# Load the saved state when the HUD is opened
 	var saved_state = Global.load_france_hud_state()
 	gdp_bar.value = saved_state["GDP"]
@@ -103,7 +112,10 @@ func _ready():
 
 	# Place icons randomly
 	place_icons_randomly()
-
+	
+func _on_timer_timeout() -> void:
+	popup_label.visible = false  # Hide the label after 30 seconds
+	
 func apply_effects(effects: Dictionary):
 	if effects.has("GDP"):
 		gdp_bar.value = clamp(gdp_bar.value + effects["GDP"], gdp_bar.min_value, gdp_bar.max_value)
