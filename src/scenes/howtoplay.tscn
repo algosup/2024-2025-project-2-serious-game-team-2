@@ -145,14 +145,15 @@ text = "Progress bar :"
 [node name="Label6" type="Label" parent="CanvasLayer/Control"]
 z_index = 5
 layout_mode = 0
-offset_left = 268.0
-offset_top = 186.0
-offset_right = 484.0
-offset_bottom = 299.0
+offset_left = 258.0
+offset_top = 187.0
+offset_right = 521.0
+offset_bottom = 300.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Interacts with pins,
+text = "Drag the map, Interacts with pins,
 validates, and opens menus 
 or settings."
+autowrap_mode = 2
 
 [node name="Label7" type="Label" parent="CanvasLayer/Control"]
 z_index = 5
