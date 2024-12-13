@@ -264,8 +264,6 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/fill = SubResource("StyleBoxTexture_emqyg")
 value = 75.0
-allow_greater = true
-allow_lesser = true
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
@@ -416,6 +414,7 @@ offset_bottom = 25.0
 text = "0%"
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="GDP_Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -429,6 +428,7 @@ wait_time = 5.0
 [connection signal="pressed" from="France/Cement/Cement" to="." method="_on_cement_pressed"]
 [connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="ProgressBar/Label/GDP" to="." method="_on_gdp_mouse_entered"]
+[connection signal="mouse_exited" from="ProgressBar/Label/GDP" to="." method="_on_gdp_mouse_exited"]
 [connection signal="mouse_entered" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_entered"]
 [connection signal="mouse_exited" from="ProgressBar/Label/global_emissions" to="." method="_on_global_emissions_mouse_exited"]
 [connection signal="mouse_entered" from="ProgressBar/Label/R&D_progress" to="." method="_on_rd_progress_mouse_entered"]

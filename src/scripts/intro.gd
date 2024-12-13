@@ -14,6 +14,5 @@ func _ready():
 
 # Function to change to the home screen
 func change_to_home():
-	# Add a short delay to ensure smooth transition
-	await get_tree().create_timer(0.2).timeout
+
 	Global.change_scene("res://scenes/home_screen.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b07f815ijqa41"]
 
 [ext_resource type="Script" path="res://scripts/questions_cement.gd" id="1_6cuw6"]
-[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="2_sw2qp"]
+[ext_resource type="Texture2D" uid="uid://b40ds7m5ecpdq" path="res://assets/clouds/4.png" id="2_a36f0"]
 [ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_1lf6p"]
 [ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_od7hj"]
 [ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="5_n6lpq"]
@@ -66,10 +66,10 @@ offset_bottom = 659.0
 color = Color(0.329738, 0.661307, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Bg" type="Sprite2D" parent="Windows"]
-position = Vector2(585.5, 329.5)
-scale = Vector2(0.892912, 0.667017)
-texture = ExtResource("2_sw2qp")
+[node name="4" type="Sprite2D" parent="Windows"]
+position = Vector2(587, 377)
+scale = Vector2(1.56364, 1.29837)
+texture = ExtResource("2_a36f0")
 
 [node name="back_button_cement" type="Control" parent="."]
 layout_mode = 3
@@ -86,10 +86,10 @@ anchor_left = -0.741
 anchor_top = -0.221
 anchor_right = -0.741
 anchor_bottom = -0.221
-offset_left = -61.462
-offset_top = -8.601
-offset_right = -8.46199
-offset_bottom = 42.399
+offset_left = -71.462
+offset_top = 3.399
+offset_right = -18.462
+offset_bottom = 54.399
 texture_normal = ExtResource("3_1lf6p")
 texture_pressed = ExtResource("4_od7hj")
 texture_hover = ExtResource("5_n6lpq")
@@ -198,22 +198,27 @@ vertical_alignment = 1
 uppercase = true
 max_lines_visible = 1
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="effects" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 113.0
-offset_right = 833.0
-offset_bottom = 367.0
+offset_left = 69.0
+offset_top = 70.0
+offset_right = 1092.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 autowrap_mode = 2
 
 [node name="questions" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 113.0
-offset_right = 831.0
-offset_bottom = 395.0
+offset_left = 71.0
+offset_top = 122.0
+offset_right = 1082.0
+offset_bottom = 404.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 text = "this is a question"
+horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="back_button_cement/back_button_cement" to="." method="_on_back_button_cement_pressed"]
 [connection signal="pressed" from="yes/yes" to="." method="_on_yes_pressed"]

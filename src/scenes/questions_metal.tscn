@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c71t18y8jx33h"]
 
 [ext_resource type="Script" path="res://scripts/questions_metal.gd" id="1_c47mh"]
-[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="2_heuaq"]
+[ext_resource type="Texture2D" uid="uid://b40ds7m5ecpdq" path="res://assets/clouds/4.png" id="2_ai3kw"]
 [ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_bibh1"]
 [ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_lsrle"]
 [ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="5_xvw3k"]
@@ -66,10 +66,10 @@ offset_bottom = 659.0
 color = Color(0.329738, 0.661307, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Bg" type="Sprite2D" parent="Windows"]
-position = Vector2(585.5, 329.5)
-scale = Vector2(0.892912, 0.667017)
-texture = ExtResource("2_heuaq")
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(587, 377)
+scale = Vector2(1.56364, 1.29837)
+texture = ExtResource("2_ai3kw")
 
 [node name="back_button_metal" type="Control" parent="."]
 layout_mode = 3
@@ -86,10 +86,10 @@ anchor_left = -0.741
 anchor_top = -0.221
 anchor_right = -0.741
 anchor_bottom = -0.221
-offset_left = -61.462
-offset_top = -8.601
-offset_right = -8.46199
-offset_bottom = 42.399
+offset_left = -79.462
+offset_top = 7.399
+offset_right = -26.462
+offset_bottom = 58.399
 texture_normal = ExtResource("3_bibh1")
 texture_pressed = ExtResource("4_lsrle")
 texture_hover = ExtResource("5_xvw3k")
@@ -117,10 +117,10 @@ anchor_left = 0.413
 anchor_top = 0.519
 anchor_right = 0.587
 anchor_bottom = 0.63
-offset_left = -162.776
-offset_top = 73.688
-offset_right = -163.224
-offset_bottom = 73.76
+offset_left = -140.776
+offset_top = 137.688
+offset_right = -141.224
+offset_bottom = 137.76
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_88by4")
@@ -132,15 +132,15 @@ anchor_left = 0.5
 anchor_top = -0.563
 anchor_right = 0.5
 anchor_bottom = 1.437
-offset_left = -140.0
-offset_top = 59.536
-offset_right = 137.0
-offset_bottom = -48.464
+offset_left = -135.0
+offset_top = 32.536
+offset_right = 142.0
+offset_bottom = -21.464
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 17
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 65
 text = "Yes"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -168,10 +168,10 @@ anchor_left = 0.354
 anchor_top = 0.519
 anchor_right = 0.597
 anchor_bottom = 0.704
-offset_left = 224.192
-offset_top = 73.688
-offset_right = 144.256
-offset_bottom = 25.808
+offset_left = 206.192
+offset_top = 136.688
+offset_right = 126.256
+offset_bottom = 88.808
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_2nn3g")
@@ -183,15 +183,15 @@ anchor_left = 0.5
 anchor_top = -0.563
 anchor_right = 0.5
 anchor_bottom = 1.437
-offset_left = -140.0
-offset_top = 56.536
-offset_right = 137.0
-offset_bottom = -51.464
+offset_left = -132.0
+offset_top = 32.536
+offset_right = 145.0
+offset_bottom = -21.464
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 17
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 65
 text = "NO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -199,18 +199,23 @@ uppercase = true
 max_lines_visible = 1
 
 [node name="effects" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 113.0
-offset_right = 829.0
-offset_bottom = 385.0
+offset_left = 69.0
+offset_top = 70.0
+offset_right = 1092.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 autowrap_mode = 2
 
 [node name="questions" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 113.0
-offset_right = 831.0
-offset_bottom = 395.0
+offset_left = 71.0
+offset_top = 122.0
+offset_right = 1082.0
+offset_bottom = 404.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
 text = "this is a question"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
