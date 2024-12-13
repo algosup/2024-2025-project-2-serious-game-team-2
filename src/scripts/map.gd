@@ -31,10 +31,10 @@ const COUNTRY_MAP = {
 
 # Define thresholds for colors
 const COLOR_THRESHOLDS = {
-	"green": {"GDP": 80, "Emissions": 30},
-	"yellow": {"GDP": 50, "Emissions": 50},
-	"orange": {"GDP": 30, "Emissions": 70},
-	"red": {"GDP": 10, "Emissions": 90}
+	"green": {"Emissions": 30},
+	"yellow": {"Emissions": 50},
+	"orange": {"Emissions": 70},
+	"red": {"Emissions": 90}
 }
 
 # Scene paths for dynamic instantiation
@@ -95,11 +95,11 @@ func _update_france_color():
 			print("Error: Could not fetch values for France HUD.")
 
 func determine_color(gdp, emissions) -> String:
-	if gdp >= COLOR_THRESHOLDS["green"]["GDP"] and emissions <= COLOR_THRESHOLDS["green"]["Emissions"]:
+	if emissions <= COLOR_THRESHOLDS["green"]["Emissions"]:
 		return "green"
-	elif gdp >= COLOR_THRESHOLDS["yellow"]["GDP"] and emissions <= COLOR_THRESHOLDS["yellow"]["Emissions"]:
+	elif emissions <= COLOR_THRESHOLDS["yellow"]["Emissions"]:
 		return "yellow"
-	elif gdp >= COLOR_THRESHOLDS["orange"]["GDP"] and emissions <= COLOR_THRESHOLDS["orange"]["Emissions"]:
+	elif emissions <= COLOR_THRESHOLDS["orange"]["Emissions"]:
 		return "orange"
 	else:
 		return "red"

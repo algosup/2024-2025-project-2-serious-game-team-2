@@ -18,7 +18,7 @@ var current_volume: float = 1.0  # Default volume level (range: 0.0 - 1.0)
 # France HUD state and instance
 var france_hud_state = {
 	"GDP": 75.0,
-	"Emissions": 50.0,
+	"Emissions": 30.0,
 	"R&D": 60.0,
 	"BusValue": 50.0,
 	"CarValue": 40.0,
