@@ -20,10 +20,10 @@ var france_hud_state = {
 	"Emissions": 50.0,
 	"R&D": 60.0,
 	"BusValue": 50.0,
-	"CarValue": 50.0,
-	"CementValue": 50.0,
-	"MetalValue": 50.0,
-	"NuclearValue": 50.0
+	"CarValue": 40.0,
+	"CementValue": 30.0,
+	"MetalValue": 45.0,
+	"NuclearValue": 80.0
 }
 var france_hud_instance = null  # Declare france_hud_instance globally
 

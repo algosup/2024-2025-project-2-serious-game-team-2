@@ -4,124 +4,113 @@ extends Node
 const QUESTIONS = {
 	"Bus": [
 	{
-		"text": "In the past week, the French government has launched a subsidy program to support the adoption of electric buses across the country. Has this initiative led to a decrease in GDP but also significantly reduced CO2 emissions from buses?",
+		"text": "In 2020, public transportation accounted for a significant share of urban mobility in France. Are buses considered one of the least carbon-intensive modes of public transport?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": 0.6, "BusValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.4, "BusValue": 4 }
-		},
-		"output": {
-			"Yes": "Correct! The subsidy program has required substantial investment, slightly impacting GDP, while effectively lowering CO2 emissions from the bus fleet.",
-			"No": "Incorrect. The initiative has indeed had a negative impact on GDP due to the costs involved, but it has successfully reduced CO2 emissions from buses."
-		}
-	},
-	{
-		"text": "Two days ago, reports emerged that France is considering the removal of all subsidies for traditional diesel buses. Is this removal expected to increase GDP and lead to higher CO2 emissions?",
-		"effects": {
-			"Yes": { "GDP": -10, "R&D": -0.5, "BusValue": 5 },
-			"No": { "GDP": 0, "R&D": 0.3, "BusValue": -2 }
-		},
-		"output": {
-			"Yes": "Incorrect. Removing subsidies is likely to negatively impact GDP due to potential losses in the bus industry and could lead to higher CO2 emissions.",
-			"No": "Correct! The removal of subsidies is expected to strain the bus industry, potentially increasing CO2 emissions while having no direct effect on GDP."
-		}
-	},
-	{
-		"text": "Last month, France implemented stricter emissions standards for all new buses entering the market. Has this policy resulted in a decrease in GDP but also a reduction in CO2 emissions from buses?",
-		"effects": {
-			"Yes": { "GDP": -12, "R&D": 0.9, "BusValue": -4 },
-			"No": { "GDP": 0, "R&D": -0.2, "BusValue": 3 }
-		},
-		"output": {
-			"Yes": "Correct! Stricter emissions standards have required significant investment, slightly impacting GDP, while effectively reducing CO2 emissions from buses.",
-			"No": "Incorrect. The new standards have indeed led to a decrease in GDP due to increased costs, but they have successfully reduced CO2 emissions."
-		}
-	},
-	{
-		"text": "Yesterday, France announced a plan to expand its bus network by 20% over the next year. Is this expansion expected to decrease GDP and lower CO2 emissions from buses?",
-		"effects": {
-			"Yes": { "GDP": -18, "R&D": 0.4, "BusValue": -5 },
-			"No": { "GDP": 0, "R&D": -0.7, "BusValue": 2 }
-		},
-		"output": {
-			"Yes": "Correct! Expanding the bus network requires significant investment, which can negatively impact GDP, but it also contributes to lower CO2 emissions by enhancing public transport usage.",
-			"No": "Incorrect. The expansion is likely to decrease GDP due to the costs involved, while it effectively lowers CO2 emissions."
-		}
-	},
-	{
-		"text": "A few days ago, France decided to phase out old diesel buses in favor of hybrid models. Has this decision led to a reduction in GDP but also decreased CO2 emissions from buses?",
-		"effects": {
-			"Yes": { "GDP": -22, "R&D": 0.7, "BusValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.6, "BusValue": 4 }
-		},
-		"output": {
-			"Yes": "Correct! Phasing out old diesel buses requires substantial investment, impacting GDP, while hybrid models contribute to lower CO2 emissions.",
-			"No": "Incorrect. The decision has resulted in decreased GDP due to the costs of transitioning, but it has successfully reduced CO2 emissions."
-		}
-	},
-	{
-		"text": "Earlier this month, France proposed increasing the number of diesel buses to improve public transport coverage. Is this increase expected to boost GDP and reduce CO2 emissions from buses?",
-		"effects": {
-			"Yes": { "GDP": -15, "R&D": -0.5, "BusValue": 5 },
-			"No": { "GDP": 0, "R&D": 0.8, "BusValue": -3 }
-		},
-		"output": {
-			"Yes": "Incorrect. Increasing diesel buses might not boost GDP due to higher operational costs and could lead to increased CO2 emissions.",
-			"No": "Correct! The increase in diesel buses does not positively impact GDP and actually leads to higher CO2 emissions."
-		}
-	},
-	{
-		"text": "Recently, France has allocated funds to research alternative fuels for buses. Does this allocation lead to a decrease in GDP but also lower CO2 emissions from buses?",
-		"effects": {
-			"Yes": { "GDP": -8, "R&D": 0.5, "BusValue": -2 },
+			"Yes": { "GDP": -5, "R&D": 0.5, "BusValue": -2 },
 			"No": { "GDP": 0, "R&D": -0.3, "BusValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct! Investing in alternative fuels requires financial resources, slightly impacting GDP, while contributing to reduced CO2 emissions.",
-			"No": "Incorrect. The allocation has a negative effect on GDP due to the investment costs, but it effectively lowers CO2 emissions."
+			"Yes": "Correct! Modern buses, especially electric and hybrid models, emit significantly less CO2 compared to private cars.",
+			"No": "Incorrect. While traditional diesel buses contribute to emissions, modern buses are designed to be more eco-friendly."
 		}
 	},
 	{
-		"text": "Last week, France decided to maintain the current fleet of diesel buses without any upgrades. Is this maintenance expected to have no impact on GDP and lead to a decrease in CO2 emissions from buses?",
+		"text": "France has been transitioning to electric buses as part of its climate action plan. By 2030, is France aiming for at least 50% of its bus fleet to be electric?",
 		"effects": {
-			"Yes": { "GDP": -10, "R&D": -0.4, "BusValue": 4 },
-			"No": { "GDP": 0, "R&D": 0.6, "BusValue": -3 }
+			"Yes": { "GDP": -12, "R&D": 0.7, "BusValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.4, "BusValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. Maintaining the current fleet without upgrades does not reduce CO2 emissions and can negatively impact GDP due to inefficiencies.",
-			"No": "Correct! Keeping the existing diesel buses without upgrades fails to decrease CO2 emissions and has no positive effect on GDP."
+			"Yes": "Correct! The French government has set ambitious goals to electrify public transportation to reduce emissions.",
+			"No": "Incorrect. France's climate action plan includes electrifying a significant portion of its bus fleet."
 		}
 	},
 	{
-		"text": "A few weeks ago, France initiated a program to integrate renewable energy sources into bus operations. Has this integration resulted in a decrease in GDP but also lowered CO2 emissions from buses?",
+		"text": "The European Union's Clean Vehicle Directive aims to promote sustainable public transport. Does this directive require a minimum percentage of low-emission buses in public contracts?",
 		"effects": {
-			"Yes": { "GDP": -14, "R&D": 0.9, "BusValue": -4 },
+			"Yes": { "GDP": -8, "R&D": 0.6, "BusValue": -3 },
 			"No": { "GDP": 0, "R&D": -0.2, "BusValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! Integrating renewable energy requires investment, slightly impacting GDP, while significantly reducing CO2 emissions from buses.",
-			"No": "Incorrect. The integration has led to a decrease in GDP due to the costs involved, but it has successfully lowered CO2 emissions."
+			"Yes": "Correct! The directive ensures that public contracts prioritize low- and zero-emission vehicles, including buses.",
+			"No": "Incorrect. The Clean Vehicle Directive mandates the inclusion of low-emission buses in public procurement."
 		}
 	},
 	{
-		"text": "Recently, France opted to discontinue the use of hybrid buses in favor of traditional diesel models. Is this discontinuation expected to decrease GDP and reduce CO2 emissions from buses?",
+		"text": "Public transport is often subsidized to encourage usage and reduce emissions. In France, do subsidies cover a portion of operating costs for regional bus services?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": -0.7, "BusValue": 5 },
-			"No": { "GDP": 0, "R&D": 0.4, "BusValue": -2 }
+			"Yes": { "GDP": -10, "R&D": 0.4, "BusValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.3, "BusValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. Discontinuing hybrid buses is likely to harm GDP due to reduced innovation and will increase CO2 emissions.",
-			"No": "Correct! The move away from hybrid buses does not decrease GDP and actually leads to higher CO2 emissions."
+			"Yes": "Correct! Subsidies help keep ticket prices affordable and promote bus usage over private cars.",
+			"No": "Incorrect. Subsidies are essential for maintaining accessible and environmentally friendly public transport."
 		}
 	},
 	{
-		"text": "Two weeks ago, France announced a partnership with tech companies to develop smart bus systems. Has this partnership led to a decrease in GDP but also lowered CO2 emissions from buses?",
+		"text": "France has implemented Low Emission Zones (LEZs) in major cities. Are buses required to meet stricter emission standards in these zones?",
 		"effects": {
-			"Yes": { "GDP": -17, "R&D": 0.7, "BusValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.5, "BusValue": 4 }
+			"Yes": { "GDP": -7, "R&D": 0.5, "BusValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.4, "BusValue": 4 }
 		},
 		"output": {
-			"Yes": "Correct! Collaborating with tech companies involves investment, slightly impacting GDP, while smart systems contribute to reduced CO2 emissions.",
-			"No": "Incorrect. The partnership has resulted in a decrease in GDP due to the investments made, but it has effectively lowered CO2 emissions."
+			"Yes": "Correct! LEZs require public vehicles like buses to adhere to higher emission standards.",
+			"No": "Incorrect. Buses must meet stricter emission standards to operate in Low Emission Zones."
+		}
+	},
+	{
+		"text": "In 2021, France adopted the Mobility Orientation Law to improve public transport infrastructure. Does this law prioritize rural connectivity through bus services?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": 0.6, "BusValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.3, "BusValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! The Mobility Orientation Law emphasizes improving rural transport, including bus networks, to reduce car dependency.",
+			"No": "Incorrect. The law focuses on enhancing public transport infrastructure, including rural bus services."
+		}
+	},
+	{
+		"text": "Electrification of bus fleets can be challenging due to infrastructure needs. Does charging infrastructure availability limit the adoption of electric buses in many French cities?",
+		"effects": {
+			"Yes": { "GDP": -15, "R&D": 0.8, "BusValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.5, "BusValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Limited charging infrastructure is a significant barrier to scaling up electric bus fleets.",
+			"No": "Incorrect. Charging infrastructure is a critical factor in the adoption of electric buses."
+		}
+	},
+	{
+		"text": "Bus Rapid Transit (BRT) systems are an efficient way to reduce urban congestion. Has France implemented BRT systems in any of its cities?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.6, "BusValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.4, "BusValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Cities like Nantes and Lyon have implemented BRT systems to improve urban mobility.",
+			"No": "Incorrect. Several French cities have adopted BRT systems to reduce congestion and emissions."
+		}
+	},
+	{
+		"text": "Hydrogen-powered buses are emerging as a clean alternative. Is France actively testing hydrogen buses as part of its sustainability initiatives?",
+		"effects": {
+			"Yes": { "GDP": -20, "R&D": 1.0, "BusValue": -5 },
+			"No": { "GDP": 0, "R&D": -0.6, "BusValue": 4 }
+		},
+		"output": {
+			"Yes": "Correct! France is testing hydrogen buses as a sustainable solution to further reduce emissions.",
+			"No": "Incorrect. Hydrogen buses are part of France's sustainability initiatives to decarbonize public transport."
+		}
+	},
+	{
+		"text": "Modernizing bus fleets requires significant investment. Has the French government allocated specific funds for bus modernization under its recovery plan?",
+		"effects": {
+			"Yes": { "GDP": -18, "R&D": 0.7, "BusValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.5, "BusValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Bus modernization is a key component of France's recovery and sustainability plans.",
+			"No": "Incorrect. The government has allocated funds to modernize bus fleets as part of its recovery plan."
 		}
 	}
 ],
@@ -129,468 +118,458 @@ const QUESTIONS = {
 
 
 
-"Car" : [
+"Car": [
 	{
-	  "text": "Last month, France announced a significant subsidy for electric vehicle (EV) production to combat climate change. Does this initiative lead to a reduction in GDP?",
-	  "effects": {
-		"Yes": { "GDP": -15, "R&D": 0.8, "CarValue": -4 },
-		"No": { "GDP": 0, "R&D": -0.7, "CarValue": 3 }
-	  },
-	  "output": {
-		"Yes": "Correct! The subsidy is expected to reduce GDP by 15 units due to increased production costs.",
-		"No": "Incorrect. The subsidy will actually lead to a decrease in GDP."
-	  }
+		"text": "France plans to ban the sale of internal combustion engine vehicles by 2035. Is this policy aligned with the European Union's Green Deal?",
+		"effects": {
+			"Yes": { "GDP": -15, "R&D": 0.8, "CarValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "CarValue": 2 }
+		},
+		"output": {
+			"Yes": "Correct! The EU's Green Deal promotes phasing out internal combustion engines to reduce emissions by 2050.",
+			"No": "Incorrect. This policy is part of the EU's Green Deal for carbon neutrality by mid-century."
+		}
 	},
 	{
-	  "text": "Recently, France has banned the sale of all gasoline cars by 2035. Is this policy ineffective in reducing CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -20, "R&D": -0.5, "CarValue": 4 },
-		"No": { "GDP": 0, "R&D": 0.6, "CarValue": -3 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. Banning gasoline cars is effective in reducing CO2 emissions.",
-		"No": "Correct! The policy effectively reduces CO2 emissions by promoting cleaner vehicles."
-	  }
+		"text": "Electric vehicles (EVs) are less carbon-intensive than gasoline cars. Does producing EV batteries contribute significantly to CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.6, "CarValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.4, "CarValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Battery production has a high carbon footprint, though EVs offset this through lower emissions over time.",
+			"No": "Incorrect. EV battery production contributes significantly to CO2 emissions during manufacturing."
+		}
 	},
 	{
-	  "text": "In the past week, France has increased taxes on diesel vehicles to lower air pollution. Does this tax increase lead to higher CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -7, "R&D": -0.3, "CarValue": 2 },
-		"No": { "GDP": 0, "R&D": 0.4, "CarValue": -2 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. Increasing taxes on diesel vehicles actually lowers CO2 emissions.",
-		"No": "Correct! The tax increase helps reduce CO2 emissions by discouraging diesel use."
-	  }
+		"text": "France provides subsidies to encourage the purchase of electric vehicles. Are these subsidies expected to decrease GDP in the short term?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": 0.7, "CarValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "CarValue": 2 }
+		},
+		"output": {
+			"Yes": "Correct! Subsidies require government spending, which can reduce GDP initially while promoting sustainability.",
+			"No": "Incorrect. Subsidies often impact GDP in the short term due to financial allocations."
+		}
 	},
 	{
-	  "text": "Two days ago, France launched a campaign encouraging the use of hybrid cars to reduce environmental impact. Will this campaign have no effect on GDP?",
-	  "effects": {
-		"Yes": { "GDP": 0, "R&D": 0.5, "CarValue": -3 },
-		"No": { "GDP": -10, "R&D": -0.6, "CarValue": 4 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. The campaign is expected to reduce GDP due to increased production costs.",
-		"No": "Correct! The campaign will have an impact on GDP by lowering it."
-	  }
+		"text": "In urban areas, car-sharing programs have grown in popularity. Do these programs help reduce CO2 emissions by lowering private car usage?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": 0.5, "CarValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.3, "CarValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Car-sharing programs reduce the need for private vehicles, lowering overall CO2 emissions.",
+			"No": "Incorrect. Car-sharing programs effectively decrease CO2 emissions by reducing the number of cars on the road."
+		}
 	},
 	{
-	  "text": "Recently, France has invested heavily in autonomous vehicle technology to improve transportation efficiency. Does this investment lead to a decrease in CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -12, "R&D": 0.9, "CarValue": -5 },
-		"No": { "GDP": 0, "R&D": -0.4, "CarValue": 2 }
-	  },
-	  "output": {
-		"Yes": "Correct! Investment in autonomous vehicles is expected to significantly reduce CO2 emissions.",
-		"No": "Incorrect. The investment will actually decrease CO2 emissions."
-	  }
+		"text": "France recently increased taxes on diesel cars to discourage their use. Does this tax contribute to reducing air pollution?",
+		"effects": {
+			"Yes": { "GDP": -7, "R&D": 0.4, "CarValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.2, "CarValue": 4 }
+		},
+		"output": {
+			"Yes": "Correct! Diesel taxes are part of efforts to reduce harmful emissions and promote cleaner alternatives.",
+			"No": "Incorrect. Increasing diesel taxes helps reduce air pollution by discouraging their use."
+		}
 	},
 	{
-	  "text": "A week ago, France decided to remove all incentives for electric cars to stabilize the economy. Is this decision beneficial for reducing CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -8, "R&D": -0.2, "CarValue": 3 },
-		"No": { "GDP": 0, "R&D": 0.7, "CarValue": -4 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. Removing incentives for electric cars is not beneficial for reducing CO2 emissions.",
-		"No": "Correct! The decision helps in reducing CO2 emissions by discouraging fossil fuel use."
-	  }
+		"text": "Hydrogen fuel cell vehicles emit only water vapor. Is France actively investing in hydrogen infrastructure for cars?",
+		"effects": {
+			"Yes": { "GDP": -20, "R&D": 1.0, "CarValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.7, "CarValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Hydrogen is a major focus of France's clean energy transition for transportation.",
+			"No": "Incorrect. France is actively developing hydrogen infrastructure to support fuel cell vehicles."
+		}
 	},
 	{
-	  "text": "Recently, France has introduced stricter emission standards for all new cars. Does this change result in increased research and development (R&D) in the automotive sector?",
-	  "effects": {
-		"Yes": { "GDP": -5, "R&D": 0.3, "CarValue": -2 },
-		"No": { "GDP": 0, "R&D": -0.8, "CarValue": 5 }
-	  },
-	  "output": {
-		"Yes": "Correct! Stricter emission standards encourage more investment in R&D.",
-		"No": "Incorrect. The change actually leads to increased R&D in the automotive sector."
-	  }
+		"text": "France offers tax credits for companies switching to electric fleets. Are these incentives designed to reduce corporate transportation emissions?",
+		"effects": {
+			"Yes": { "GDP": -15, "R&D": 0.7, "CarValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "CarValue": 2 }
+		},
+		"output": {
+			"Yes": "Correct! Tax credits help businesses adopt cleaner fleets, reducing their transportation emissions.",
+			"No": "Incorrect. These incentives are aimed at promoting electric vehicle adoption in corporate fleets."
+		}
 	},
 	{
-	  "text": "Last week, France decided to subsidize the production of diesel cars to support the automotive industry. Is this subsidy effective in lowering CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -18, "R&D": -0.6, "CarValue": 5 },
-		"No": { "GDP": 0, "R&D": 0.2, "CarValue": -3 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. Subsidizing diesel cars actually increases CO2 emissions.",
-		"No": "Correct! The subsidy is not effective in lowering CO2 emissions."
-	  }
+		"text": "Autonomous vehicles are expected to transform urban mobility. Is France investing in autonomous vehicle research to enhance traffic efficiency?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": 0.9, "CarValue": -5 },
+			"No": { "GDP": 0, "R&D": -0.4, "CarValue": 2 }
+		},
+		"output": {
+			"Yes": "Correct! Autonomous vehicles are a key area of research to improve traffic and reduce emissions.",
+			"No": "Incorrect. France is investing in autonomous vehicle research to address urban mobility challenges."
+		}
 	},
 	{
-	  "text": "Two days ago, France launched a rebate program for consumers purchasing electric vehicles. Does this program have no impact on the country's GDP?",
-	  "effects": {
-		"Yes": { "GDP": 0, "R&D": 0.4, "CarValue": -3 },
-		"No": { "GDP": -9, "R&D": -0.5, "CarValue": 4 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. The rebate program is expected to reduce GDP due to increased subsidies.",
-		"No": "Correct! The program impacts GDP by decreasing it."
-	  }
+		"text": "Electric vehicles rely on rare earth metals like lithium. Is recycling EV batteries critical for reducing environmental impacts?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.8, "CarValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.6, "CarValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Recycling EV batteries is essential to mitigate the environmental impact of rare earth mining.",
+			"No": "Incorrect. Battery recycling plays a crucial role in reducing the environmental footprint of EVs."
+		}
 	},
 	{
-	  "text": "Recently, France has reduced funding for public transportation in favor of expanding highway infrastructure. Does this reduction contribute to lower CO2 emissions?",
-	  "effects": {
-		"Yes": { "GDP": -22, "R&D": -0.9, "CarValue": 5 },
-		"No": { "GDP": 0, "R&D": 0.3, "CarValue": -4 }
-	  },
-	  "output": {
-		"Yes": "Incorrect. Reducing funding for public transportation tends to increase CO2 emissions.",
-		"No": "Correct! The reduction does not contribute to lowering CO2 emissions."
-	  }
-	},
-	{
-	  "text": "Last month, France implemented a free public charging network for electric cars nationwide. Does this implementation lead to higher research and development (R&D) investments in the automotive sector?",
-	  "effects": {
-		"Yes": { "GDP": -6, "R&D": 0.7, "CarValue": -2 },
-		"No": { "GDP": 0, "R&D": -0.3, "CarValue": 3 }
-	  },
-	  "output": {
-		"Yes": "Correct! The free charging network encourages more R&D investments in the automotive sector.",
-		"No": "Incorrect. The implementation actually leads to higher R&D investments."
-	  }
+		"text": "France has invested heavily in public charging stations for electric cars. Does this investment aim to make EVs more accessible for consumers?",
+		"effects": {
+			"Yes": { "GDP": -18, "R&D": 0.6, "CarValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.4, "CarValue": 4 }
+		},
+		"output": {
+			"Yes": "Correct! Expanding charging infrastructure is key to increasing EV adoption across France.",
+			"No": "Incorrect. Public charging stations are critical for making EVs accessible to a wider audience."
+		}
 	}
-  ],
+],
 
 
 "Cement": [
 	{
-		"text": "In the past month, has France introduced new standards for cement manufacturing to decrease carbon dioxide emissions?",
+		"text": "Cement production accounts for around 8% of global CO2 emissions. Has France implemented policies to reduce emissions in this industry?",
 		"effects": {
-			"Yes": { "GDP": -15, "R&D": 0.7, "CementValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.5, "CementValue": 4 }
+			"Yes": { "GDP": -15, "R&D": 0.8, "CementValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "CementValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct! France has indeed introduced new standards for cement manufacturing, leading to reduced CO2 emissions and promoting research in low-carbon technologies, albeit with some economic costs.",
-			"No": "Incorrect. France has actually introduced new standards for cement manufacturing to decrease carbon dioxide emissions."
+			"Yes": "Correct! France has introduced measures such as carbon taxes and low-carbon cement alternatives to address emissions.",
+			"No": "Incorrect. France has actively implemented policies to reduce emissions in the cement industry."
 		}
 	},
 	{
-		"text": "Recently, has the French government invested in research and development for low-carbon cement technologies?",
+		"text": "Low-carbon cement technologies are gaining attention. Are these alternatives more expensive to produce than traditional cement?",
 		"effects": {
-			"Yes": { "GDP": -10, "R&D": 0.8, "CementValue": -4 },
-			"No": { "GDP": 0, "R&D": -0.6, "CementValue": 3 }
+			"Yes": { "GDP": -12, "R&D": 0.6, "CementValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.4, "CementValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! The French government has increased investment in R&D for low-carbon cement technologies, which helps reduce emissions and fosters innovation.",
-			"No": "Incorrect. The French government has actually invested in research and development for low-carbon cement technologies."
+			"Yes": "Correct! Low-carbon cement requires additional processing and new materials, increasing production costs.",
+			"No": "Incorrect. Low-carbon cement is indeed more expensive to produce than traditional cement."
 		}
 	},
 	{
-		"text": "Over the last two weeks, has France reduced its cement production quotas to mitigate climate change?",
+		"text": "France has introduced carbon taxes targeting heavy industries like cement. Do these taxes encourage companies to adopt cleaner technologies?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": 0.5, "CementValue": -2 },
-			"No": { "GDP": 0, "R&D": -0.3, "CementValue": 5 }
+			"Yes": { "GDP": -10, "R&D": 0.7, "CementValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.3, "CementValue": 4 }
 		},
 		"output": {
-			"Yes": "Correct! France has reduced cement production quotas as part of its strategy to mitigate climate change, which affects the economy and reduces CO2 emissions.",
-			"No": "Incorrect. France has actually reduced its cement production quotas to help mitigate climate change."
+			"Yes": "Correct! Carbon taxes incentivize companies to invest in cleaner and more sustainable technologies.",
+			"No": "Incorrect. Carbon taxes are designed to push industries toward adopting cleaner practices."
 		}
 	},
 	{
-		"text": "In the last few days, has France implemented a carbon tax specifically targeting the cement industry?",
+		"text": "Cement manufacturing involves a process called 'calcination,' which releases significant CO2 emissions. Is France investing in technologies to reduce these emissions?",
 		"effects": {
-			"Yes": { "GDP": -25, "R&D": 0.9, "CementValue": -5 },
-			"No": { "GDP": 0, "R&D": -0.8, "CementValue": 2 }
+			"Yes": { "GDP": -14, "R&D": 0.8, "CementValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.5, "CementValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! France has implemented a carbon tax for the cement industry, which contributes to lowering emissions and funding research, though it impacts economic output.",
-			"No": "Incorrect. France has actually implemented a carbon tax specifically targeting the cement industry."
+			"Yes": "Correct! France is investing in carbon capture and storage technologies to reduce emissions from calcination.",
+			"No": "Incorrect. France is actively working to reduce emissions from calcination through advanced technologies."
 		}
 	},
 	{
-		"text": "This month, has France launched initiatives to promote the use of alternative materials in cement production to lower emissions?",
+		"text": "Recycled materials like fly ash and slag can replace traditional cement ingredients. Has France promoted the use of these materials in construction?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": 0.5, "CementValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.3, "CementValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Using recycled materials helps lower emissions and reduces reliance on traditional cement.",
+			"No": "Incorrect. France encourages the use of recycled materials to promote sustainability in construction."
+		}
+	},
+	{
+		"text": "France has funded research into alternative binders for cement, such as geopolymers. Do these alternatives have a lower carbon footprint than traditional cement?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.9, "CementValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.4, "CementValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Geopolymers and other alternatives produce fewer emissions compared to traditional cement.",
+			"No": "Incorrect. Alternative binders like geopolymers significantly reduce the carbon footprint of cement production."
+		}
+	},
+	{
+		"text": "France has reduced its cement production quotas to meet climate goals. Is this reduction expected to decrease GDP?",
+		"effects": {
+			"Yes": { "GDP": -20, "R&D": 0.4, "CementValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.5, "CementValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Lower production quotas can impact GDP but help reduce emissions significantly.",
+			"No": "Incorrect. Reducing production quotas often leads to a decrease in GDP due to lower industrial activity."
+		}
+	},
+	{
+		"text": "Concrete is one of the most used materials in construction. Does using high-performance concrete reduce overall cement consumption?",
 		"effects": {
 			"Yes": { "GDP": -12, "R&D": 0.6, "CementValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.4, "CementValue": 4 }
+			"No": { "GDP": 0, "R&D": -0.3, "CementValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! France has launched initiatives to encourage the use of alternative materials in cement production, helping to reduce emissions and supporting research efforts.",
-			"No": "Incorrect. France has actually launched initiatives to promote the use of alternative materials in cement production to lower emissions."
+			"Yes": "Correct! High-performance concrete requires less cement while offering better strength and durability.",
+			"No": "Incorrect. High-performance concrete helps reduce cement consumption in construction projects."
 		}
 	},
 	{
-		"text": "A few days ago, did France completely ban cement production to stop all CO2 emissions?",
+		"text": "France has started exporting low-carbon cement technologies to other countries. Is this export likely to contribute positively to France's economy?",
 		"effects": {
-			"Yes": { "GDP": 0, "R&D": -0.7, "CementValue": 4 },
-			"No": { "GDP": -18, "R&D": 0.4, "CementValue": -3 }
+			"Yes": { "GDP": 10, "R&D": 0.3, "CementValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.4, "CementValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. France has not completely banned cement production; such a measure would have significant economic impacts.",
-			"No": "Correct! France has not completely banned cement production, allowing for controlled emissions reductions without halting the industry entirely."
+			"Yes": "Correct! Exporting low-carbon technologies enhances economic growth while promoting sustainability globally.",
+			"No": "Incorrect. Exporting these technologies positively impacts the economy and supports global sustainability."
 		}
 	},
 	{
-		"text": "Last week, has France decided to ignore climate change concerns in its cement industry policies?",
+		"text": "France has introduced a nationwide policy requiring cement factories to report their annual CO2 emissions. Is this policy expected to reduce emissions in the cement industry?",
 		"effects": {
-			"Yes": { "GDP": 0, "R&D": -0.5, "CementValue": 3 },
-			"No": { "GDP": -10, "R&D": 0.7, "CementValue": -2 }
+			"Yes": { "GDP": -8, "R&D": 0.5, "CementValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.2, "CementValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. France continues to address climate change concerns in its cement industry policies.",
-			"No": "Correct! France has not ignored climate change concerns and continues to implement policies to reduce emissions from the cement industry."
-		}
-	},
-	{
-		"text": "Recently, did France remove all subsidies for green cement technologies?",
-		"effects": {
-			"Yes": { "GDP": 0, "R&D": -0.2, "CementValue": 2 },
-			"No": { "GDP": -8, "R&D": 0.3, "CementValue": -4 }
-		},
-		"output": {
-			"Yes": "Incorrect. France has not removed all subsidies for green cement technologies; it continues to support sustainable practices.",
-			"No": "Correct! France has maintained subsidies for green cement technologies to promote sustainable development and reduce emissions."
-		}
-	},
-	{
-		"text": "In the past month, has France doubled its cement production without regard to environmental impacts?",
-		"effects": {
-			"Yes": { "GDP": 0, "R&D": -0.6, "CementValue": 5 },
-			"No": { "GDP": -20, "R&D": 0.5, "CementValue": -2 }
-		},
-		"output": {
-			"Yes": "Incorrect. France has not doubled its cement production without considering environmental impacts; efforts are being made to balance production with sustainability.",
-			"No": "Correct! France has not doubled its cement production without regard to environmental impacts, ensuring sustainable practices are followed."
-		}
-	},
-	{
-		"text": "Last few days, has France halted all research into sustainable cement alternatives?",
-		"effects": {
-			"Yes": { "GDP": 0, "R&D": -0.9, "CementValue": 3 },
-			"No": { "GDP": -15, "R&D": 0.8, "CementValue": -5 }
-		},
-		"output": {
-			"Yes": "Incorrect. France has not halted research into sustainable cement alternatives; it continues to invest in developing eco-friendly materials.",
-			"No": "Correct! France has not halted research into sustainable cement alternatives and remains committed to finding environmentally friendly solutions."
+			"Yes": "Correct! Transparency in emissions reporting encourages factories to adopt cleaner technologies.",
+			"No": "Incorrect. Emissions reporting policies are designed to incentivize emission reductions through transparency."
 		}
 	}
 ],
 
-"Metal" : [
+"Metal": [
 	{
-		"text": "Last week, the French government announced a significant investment in sustainable metal mining practices. Is this investment aimed at reducing carbon emissions?",
+		"text": "Metals like aluminum and steel are essential for modern infrastructure but are energy-intensive to produce. Is France investing in low-emission technologies for metal production?",
 		"effects": {
-			"Yes": { "GDP": -15, "R&D": 0.8, "MetalValue": -3 },
-			"No": { "GDP": 0, "R&D": -0.5, "MetalValue": 4 }
+			"Yes": { "GDP": -15, "R&D": 0.7, "MetalValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "MetalValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct! The investment is indeed focused on lowering carbon emissions through sustainable practices.",
-			"No": "Incorrect. The investment is actually intended to reduce carbon emissions by promoting sustainable metal mining."
+			"Yes": "Correct! France is promoting energy-efficient technologies and renewable energy use in metal production.",
+			"No": "Incorrect. France has been investing in low-emission technologies to reduce the carbon footprint of metal production."
 		}
 	},
 	{
-		"text": "A few days ago, a report emerged claiming that France has halted all research and development in metal recycling. Is this information accurate?",
+		"text": "Steel production generates large amounts of CO2. Is France adopting green hydrogen as a cleaner alternative in steelmaking?",
 		"effects": {
-			"Yes": { "GDP": -10, "R&D": 3, "MetalValue": -2 },
-			"No": { "GDP": 0, "R&D": 0.6, "MetalValue": -4 }
+			"Yes": { "GDP": -12, "R&D": 0.9, "MetalValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.6, "MetalValue": 2 }
 		},
 		"output": {
-			"Yes": "Incorrect. France has not halted R&D in metal recycling; in fact, efforts are ongoing to enhance recycling technologies.",
-			"No": "Correct! France continues to invest in research and development for metal recycling."
+			"Yes": "Correct! Green hydrogen is being used to replace fossil fuels, significantly reducing emissions.",
+			"No": "Incorrect. France is actively using green hydrogen in steel production to lower emissions."
 		}
 	},
 	{
-		"text": "Two weeks ago, France implemented new tariffs on imported metals to support local industries. Does this policy lead to a decrease in GDP?",
+		"text": "Recycled metals are key to a circular economy. Is France encouraging industries to use more recycled materials in production?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": 0.3, "MetalValue": -5 },
-			"No": { "GDP": 0, "R&D": -0.7, "MetalValue": 3 }
+			"Yes": { "GDP": -8, "R&D": 0.5, "MetalValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.3, "MetalValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct. The new tariffs may negatively impact GDP by increasing costs for industries relying on imported metals.",
-			"No": "Incorrect. The tariffs are expected to decrease GDP by making metal imports more expensive."
+			"Yes": "Correct! Recycled metals require less energy to produce, reducing emissions and waste.",
+			"No": "Incorrect. France has policies encouraging the use of recycled metals to support sustainability."
 		}
 	},
 	{
-		"text": "Recently, France has reported a surge in metal exports due to high global demand. Is this surge contributing to a reduction in national CO2 emissions?",
+		"text": "Aluminum is one of the most energy-intensive metals to produce. Is France investing in renewable energy sources for aluminum smelting?",
 		"effects": {
-			"Yes": { "GDP": -5, "R&D": 0.5, "MetalValue": -2 },
-			"No": { "GDP": 0, "R&D": -0.2, "MetalValue": 5 }
-		},
-		"output": {
-			"Yes": "Incorrect. While exports have surged, they have not directly led to a reduction in national CO2 emissions.",
-			"No": "Correct. The increase in metal exports does not contribute to lowering France's CO2 emissions."
-		}
-	},
-	{
-		"text": "Last month, a new regulation was introduced in France to limit the use of certain metals in manufacturing. Does this regulation result in increased research and development in the metal sector?",
-		"effects": {
-			"Yes": { "GDP": -8, "R&D": 0.9, "MetalValue": -3 },
+			"Yes": { "GDP": -14, "R&D": 0.7, "MetalValue": -3 },
 			"No": { "GDP": 0, "R&D": -0.4, "MetalValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! The regulation has spurred increased R&D to find alternative materials and more efficient processes.",
-			"No": "Incorrect. The regulation has actually led to a rise in research and development within the metal sector."
+			"Yes": "Correct! Renewable energy in aluminum production helps reduce emissions significantly.",
+			"No": "Incorrect. France is integrating renewable energy into aluminum smelting to lower its environmental impact."
 		}
 	},
 	{
-		"text": "In the past few days, rumors have circulated that France is considering banning all metal exports to prioritize domestic needs. Is this ban officially confirmed?",
+		"text": "Rare earth metals are crucial for renewable technologies. Is France focusing on recycling rare earth elements to reduce dependence on mining?",
 		"effects": {
-			"Yes": { "GDP": -12, "R&D": -0.6, "MetalValue": 4 },
-			"No": { "GDP": 0, "R&D": 0.7, "MetalValue": -3 }
+			"Yes": { "GDP": -10, "R&D": 0.6, "MetalValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.3, "MetalValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. There has been no official confirmation of a ban on metal exports in France.",
-			"No": "Correct! The rumors are unfounded, and no such export ban has been officially announced."
+			"Yes": "Correct! Recycling rare earth metals reduces environmental damage and reliance on mining.",
+			"No": "Incorrect. France is prioritizing recycling to ensure a sustainable supply of rare earth elements."
 		}
 	},
 	{
-		"text": "A recent study released last week shows that France has successfully reduced its metal-related CO2 emissions by 4% over the past year. Is this reduction a result of new environmental policies?",
+		"text": "France has introduced a carbon tax for metal industries. Does this tax aim to encourage cleaner production methods?",
 		"effects": {
-			"Yes": { "GDP": -18, "R&D": 0.4, "MetalValue": -4 },
-			"No": { "GDP": 0, "R&D": -0.3, "MetalValue": 5 }
+			"Yes": { "GDP": -18, "R&D": 0.4, "MetalValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "MetalValue": 4 }
 		},
 		"output": {
-			"Yes": "Correct! The reduction in CO2 emissions is attributed to the implementation of new environmental policies targeting the metal industry.",
-			"No": "Incorrect. The decrease in CO2 emissions is indeed due to recent environmental policies."
+			"Yes": "Correct! Carbon taxes incentivize companies to adopt more sustainable and energy-efficient practices.",
+			"No": "Incorrect. France’s carbon tax is designed to encourage cleaner production methods in the metal industry."
 		}
 	},
 	{
-		"text": "Recently, France has decided to eliminate all subsidies for metal production industries. Does this elimination lead to a decrease in GDP?",
+		"text": "France is developing lightweight metal alloys for electric vehicles. Do these alloys contribute to reduced emissions in transportation?",
 		"effects": {
-			"Yes": { "GDP": -22, "R&D": 0.2, "MetalValue": -5 },
-			"No": { "GDP": 0, "R&D": -0.8, "MetalValue": 3 }
+			"Yes": { "GDP": -8, "R&D": 0.6, "MetalValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.3, "MetalValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct. Removing subsidies can negatively impact GDP by increasing production costs for metal industries.",
-			"No": "Incorrect. The elimination of subsidies is expected to decrease GDP by raising costs for metal producers."
+			"Yes": "Correct! Lightweight alloys improve vehicle efficiency, reducing emissions during operation.",
+			"No": "Incorrect. France is focusing on lightweight alloys to support greener transportation solutions."
 		}
 	},
 	{
-		"text": "A few days ago, it was reported that France has doubled its investment in metal recycling technologies. Is this investment purely aimed at economic growth without considering environmental impacts?",
+		"text": "France has introduced stricter regulations on mining waste management. Are these regulations expected to increase research in waste reduction technologies?",
 		"effects": {
-			"Yes": { "GDP": -7, "R&D": -0.5, "MetalValue": 4 },
-			"No": { "GDP": 0, "R&D": 0.9, "MetalValue": -2 }
+			"Yes": { "GDP": -10, "R&D": 0.9, "MetalValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.4, "MetalValue": 2 }
 		},
 		"output": {
-			"Yes": "Incorrect. The investment in metal recycling technologies is intended to address both economic growth and environmental sustainability.",
-			"No": "Correct! The investment aims to balance economic growth with positive environmental impacts."
+			"Yes": "Correct! Stricter waste management rules drive innovation in reducing mining byproducts.",
+			"No": "Incorrect. New regulations are leading to increased research in sustainable mining practices."
 		}
 	},
 	{
-		"text": "Last month, France introduced incentives for companies to use more recycled metals in their products. Does this initiative result in no change to the country's CO2 emissions?",
+		"text": "France has recently expanded its export of sustainable metal technologies. Does this contribute positively to the country's economy?",
 		"effects": {
-			"Yes": { "GDP": -9, "R&D": -0.2, "MetalValue": 3 },
-			"No": { "GDP": 0, "R&D": 0.6, "MetalValue": -4 }
+			"Yes": { "GDP": 10, "R&D": 0.3, "MetalValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.5, "MetalValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. Using more recycled metals contributes to a reduction in CO2 emissions.",
-			"No": "Correct! The initiative leads to a decrease in CO2 emissions by promoting the use of recycled metals."
+			"Yes": "Correct! Exporting sustainable technologies boosts France’s economy while promoting global sustainability.",
+			"No": "Incorrect. The export of sustainable metal technologies positively impacts the French economy."
+		}
+	},
+	{
+		"text": "France has partnered with international organizations to improve the traceability of metals. Does this initiative help reduce illegal mining and its environmental impact?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": 0.7, "MetalValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.3, "MetalValue": 4 }
+		},
+		"output": {
+			"Yes": "Correct! Traceability measures help combat illegal mining and its associated environmental damage.",
+			"No": "Incorrect. Improving metal traceability is key to reducing illegal mining and its impact on ecosystems."
 		}
 	}
 ],
 
 "Nuclear": [
 	{
-		"text": "In the past week, the French government announced a new initiative to expand its nuclear energy infrastructure. Does this initiative aim to increase France's reliance on nuclear power?",
+		"text": "Nuclear energy accounts for over 70% of France's electricity. Is nuclear energy considered a low-carbon energy source?",
 		"effects": {
-			"Yes": { "GDP": -15, "R&D": 0.8, "NuclearValue": -4 },
+			"Yes": { "GDP": 5, "R&D": 0.7, "NuclearValue": -2 },
 			"No": { "GDP": 0, "R&D": -0.5, "NuclearValue": 3 }
 		},
 		"output": {
-			"Yes": "Correct! The initiative is indeed aimed at increasing reliance on nuclear power.",
-			"No": "Incorrect. The initiative is actually intended to increase France's reliance on nuclear power."
+			"Yes": "Correct! Nuclear power emits very low levels of CO2 compared to fossil fuels, making it a key low-carbon energy source.",
+			"No": "Incorrect. Nuclear energy is considered a low-carbon energy source due to its minimal CO2 emissions."
 		}
 	},
 	{
-		"text": "Last month, there were reports about France shutting down several nuclear reactors ahead of schedule. Is this move part of France's strategy to phase out nuclear energy?",
+		"text": "France is a leader in nuclear energy production. Is it true that nuclear energy generates radioactive waste that must be safely stored for thousands of years?",
 		"effects": {
-			"Yes": { "GDP": 0, "R&D": 0.7, "NuclearValue": -2 },
-			"No": { "GDP": -10, "R&D": -0.4, "NuclearValue": 5 }
+			"Yes": { "GDP": -8, "R&D": 0.5, "NuclearValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.6, "NuclearValue": 4 }
 		},
 		"output": {
-			"Yes": "Incorrect. The shutdowns are not part of a strategy to phase out nuclear energy.",
-			"No": "Correct! The shutdowns are not intended to phase out nuclear energy."
+			"Yes": "Correct! Radioactive waste is a challenge of nuclear energy, requiring careful long-term storage solutions.",
+			"No": "Incorrect. Nuclear energy produces radioactive waste that requires safe and secure storage for thousands of years."
 		}
 	},
 	{
-		"text": "Over the past few days, France has invested heavily in nuclear research and development projects. Does this investment aim to enhance renewable energy sources?",
+		"text": "France is currently researching advanced nuclear reactors, such as Small Modular Reactors (SMRs). Do these reactors promise lower costs and increased safety?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": -0.6, "NuclearValue": 4 },
-			"No": { "GDP": 0, "R&D": 0.9, "NuclearValue": -3 }
-		},
-		"output": {
-			"Yes": "Incorrect. The investment is focused on enhancing nuclear energy, not renewable sources.",
-			"No": "Correct! The investment aims to enhance nuclear energy, not renewable sources."
-		}
-	},
-	{
-		"text": "A recent government report released yesterday highlights the benefits of maintaining France's current level of nuclear energy production. Is this report advocating for maintaining the status quo in nuclear energy?",
-		"effects": {
-			"Yes": { "GDP": -5, "R&D": 0.3, "NuclearValue": -2 },
-			"No": { "GDP": 0, "R&D": -0.2, "NuclearValue": 3 }
-		},
-		"output": {
-			"Yes": "Correct! The report advocates for maintaining the current level of nuclear energy production.",
-			"No": "Incorrect. The report is actually advocating for maintaining the status quo in nuclear energy."
-		}
-	},
-	{
-		"text": "Recently, France has reduced subsidies for nuclear energy companies in an effort to diversify its energy portfolio. Does this reduction support the expansion of nuclear energy?",
-		"effects": {
-			"Yes": { "GDP": -25, "R&D": -1, "NuclearValue": 5 },
-			"No": { "GDP": 0, "R&D": 0.5, "NuclearValue": -3 }
-		},
-		"output": {
-			"Yes": "Incorrect. The reduction in subsidies does not support the expansion of nuclear energy.",
-			"No": "Correct! The reduction in subsidies is intended to diversify France's energy portfolio away from nuclear energy."
-		}
-	},
-	{
-		"text": "In the last two weeks, France has launched a campaign to promote nuclear energy as a clean energy source. Is this campaign intended to improve the country's environmental footprint?",
-		"effects": {
-			"Yes": { "GDP": -10, "R&D": 0.6, "NuclearValue": -3 },
+			"Yes": { "GDP": -12, "R&D": 0.8, "NuclearValue": -4 },
 			"No": { "GDP": 0, "R&D": -0.3, "NuclearValue": 2 }
 		},
 		"output": {
-			"Yes": "Correct! The campaign aims to improve France's environmental footprint by promoting nuclear energy as clean.",
-			"No": "Incorrect. The campaign is indeed intended to improve the country's environmental footprint."
+			"Yes": "Correct! SMRs are being developed for their potential to reduce costs and enhance safety in nuclear energy.",
+			"No": "Incorrect. Advanced reactors like SMRs aim to lower costs and improve safety features."
 		}
 	},
 	{
-		"text": "Last month, France decided to halt all new nuclear energy projects indefinitely. Does this decision reflect a commitment to expanding nuclear energy?",
+		"text": "In recent years, France has exported nuclear technology to other countries. Does this contribute to global energy security?",
 		"effects": {
-			"Yes": { "GDP": -20, "R&D": -0.8, "NuclearValue": 4 },
-			"No": { "GDP": 0, "R&D": 0.7, "NuclearValue": -2 }
+			"Yes": { "GDP": 10, "R&D": 0.4, "NuclearValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.5, "NuclearValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. Halting new projects does not reflect a commitment to expanding nuclear energy.",
-			"No": "Correct! The decision to halt new projects indicates a lack of commitment to expanding nuclear energy."
+			"Yes": "Correct! Exporting nuclear technology helps enhance energy security and reduce global reliance on fossil fuels.",
+			"No": "Incorrect. Nuclear technology exports contribute to global energy security by providing stable and reliable energy solutions."
 		}
 	},
 	{
-		"text": "A few days ago, the French Ministry of Energy announced increased funding for nuclear safety measures. Does this increase in funding suggest that France is scaling back its nuclear energy programs?",
+		"text": "France has implemented strict safety regulations for its nuclear power plants. Do these regulations aim to prevent accidents like the Fukushima disaster?",
 		"effects": {
-			"Yes": { "GDP": -15, "R&D": -0.5, "NuclearValue": 3 },
-			"No": { "GDP": 0, "R&D": 0.4, "NuclearValue": -2 }
+			"Yes": { "GDP": -10, "R&D": 0.6, "NuclearValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.4, "NuclearValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. The increased funding is meant to enhance safety, not scale back nuclear programs.",
-			"No": "Correct! The funding increase is intended to improve safety measures, not reduce nuclear energy programs."
+			"Yes": "Correct! France's safety regulations are designed to prevent nuclear accidents and protect public health.",
+			"No": "Incorrect. Safety regulations aim to prevent disasters like Fukushima and maintain public trust in nuclear energy."
 		}
 	},
 	{
-		"text": "Recently, France has been debating the benefits of nuclear energy in its national parliament. Is this debate centered around phasing out nuclear power entirely?",
+		"text": "France has invested in reprocessing spent nuclear fuel. Does this process help reduce the volume of high-level radioactive waste?",
 		"effects": {
-			"Yes": { "GDP": -5, "R&D": 0.2, "NuclearValue": -1 },
-			"No": { "GDP": 0, "R&D": -0.1, "NuclearValue": 2 }
+			"Yes": { "GDP": -15, "R&D": 0.7, "NuclearValue": -4 },
+			"No": { "GDP": 0, "R&D": -0.6, "NuclearValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. The debate is not solely about phasing out nuclear power entirely.",
-			"No": "Correct! The debate covers various aspects of nuclear energy, not just its complete phase-out."
+			"Yes": "Correct! Reprocessing spent nuclear fuel reduces waste volume and allows some materials to be reused.",
+			"No": "Incorrect. Reprocessing spent fuel is a key method for minimizing high-level radioactive waste."
 		}
 	},
 	{
-		"text": "In the past few days, France has signed an agreement with neighboring countries to share nuclear technology. Does this agreement indicate a move towards reducing nuclear energy collaboration?",
+		"text": "Nuclear energy is a reliable power source, but its construction requires significant upfront investment. Does this investment contribute to GDP growth in the long term?",
 		"effects": {
-			"Yes": { "GDP": -25, "R&D": -1, "NuclearValue": 5 },
-			"No": { "GDP": 0, "R&D": 0.9, "NuclearValue": -4 }
+			"Yes": { "GDP": 20, "R&D": 0.3, "NuclearValue": -2 },
+			"No": { "GDP": -5, "R&D": -0.2, "NuclearValue": 3 }
 		},
 		"output": {
-			"Yes": "Incorrect. The agreement actually enhances nuclear energy collaboration rather than reducing it.",
-			"No": "Correct! The agreement signifies increased collaboration in nuclear technology among neighboring countries."
+			"Yes": "Correct! Nuclear energy projects stimulate economic growth through job creation and technological advancements.",
+			"No": "Incorrect. Investments in nuclear energy contribute to long-term GDP growth and energy stability."
+		}
+	},
+	{
+		"text": "France's nuclear plants rely on uranium imports. Are these imports a potential risk to energy security?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": 0.2, "NuclearValue": -2 },
+			"No": { "GDP": 0, "R&D": -0.4, "NuclearValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Dependence on imported uranium can pose risks to energy security during global supply disruptions.",
+			"No": "Incorrect. Reliance on uranium imports is a recognized risk for energy security in nuclear-reliant countries."
+		}
+	},
+	{
+		"text": "France is phasing out older reactors and replacing them with newer designs. Do these upgrades aim to improve efficiency and reduce environmental impact?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.8, "NuclearValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.5, "NuclearValue": 4 }
+		},
+		"output": {
+			"Yes": "Correct! Upgrading reactors improves energy efficiency and reduces waste and emissions.",
+			"No": "Incorrect. Replacing older reactors with newer designs enhances efficiency and lowers environmental impact."
+		}
+	},
+	{
+		"text": "France is exploring nuclear fusion as a potential future energy source. Is fusion expected to produce less radioactive waste than current nuclear fission reactors?",
+		"effects": {
+			"Yes": { "GDP": -20, "R&D": 1.0, "NuclearValue": -3 },
+			"No": { "GDP": 0, "R&D": -0.7, "NuclearValue": 3 }
+		},
+		"output": {
+			"Yes": "Correct! Nuclear fusion produces significantly less waste and has the potential to provide virtually limitless energy.",
+			"No": "Incorrect. Fusion is expected to produce less radioactive waste compared to traditional fission reactors."
 		}
 	}
 ]
+
 
 }
