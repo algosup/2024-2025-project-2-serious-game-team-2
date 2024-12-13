@@ -1,0 +1,263 @@
+[gd_scene load_steps=21 format=3 uid="uid://bhj1shhjinyce"]
+
+[ext_resource type="Texture2D" uid="uid://d0j0bhojx0cvf" path="res://map_data/collsion_map.png" id="1_c0kci"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="1_uqkwa"]
+[ext_resource type="Texture2D" uid="uid://dfureyit25atg" path="res://map_data/outline.png" id="3_7r1bj"]
+[ext_resource type="Texture2D" uid="uid://dlevycwthqnbg" path="res://assets/btn/menu.png" id="3_y2fkl"]
+[ext_resource type="Texture2D" uid="uid://dsuqd2bb81gc3" path="res://map_data/base_gery.png" id="4_2mxkq"]
+[ext_resource type="Texture2D" uid="uid://cfww3caidq0rs" path="res://map_data/germany.png" id="6_5kn13"]
+[ext_resource type="Texture2D" uid="uid://dg48l8wtxqdbk" path="res://map_data/france_green.png" id="6_mmbmj"]
+[ext_resource type="Texture2D" uid="uid://c551c3ktirb3k" path="res://map_data/spain.png" id="7_wdjgo"]
+[ext_resource type="Texture2D" uid="uid://dng21ly7ye1t" path="res://map_data/france_yellow.png" id="8_03bv8"]
+[ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="8_7mxf4"]
+[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="9_2apm0"]
+[ext_resource type="Texture2D" uid="uid://chj3jj0qk62vo" path="res://map_data/france_orange.png" id="9_nrb64"]
+[ext_resource type="Texture2D" uid="uid://ctkwn6lsp2q6t" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_11.png" id="10_83bud"]
+[ext_resource type="Texture2D" uid="uid://b5cp0fbytns2b" path="res://map_data/france_red.png" id="10_sfxao"]
+[ext_resource type="Script" path="res://scripts/test_progress_bar2.gd" id="10_yt5y7"]
+[ext_resource type="Texture2D" uid="uid://ueyn4kc0gjx4" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_23.png" id="11_2hm3f"]
+[ext_resource type="Texture2D" uid="uid://cy581xpnvku3l" path="res://assets/GUI Interface Kit Free/PNG/GUI-Kit-Pack-Free_32.png" id="12_7ku00"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evejx"]
+texture = ExtResource("10_83bud")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rixxq"]
+texture = ExtResource("11_2hm3f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5f0oj"]
+texture = ExtResource("12_7ku00")
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uqkwa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="settings2" type="TextureButton" parent="."]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2140.0
+offset_top = 581.0
+offset_right = 2204.0
+offset_bottom = 645.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_7mxf4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="home" type="TextureButton" parent="."]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2210.0
+offset_top = 581.0
+offset_right = 2274.0
+offset_bottom = 645.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_y2fkl")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="collision" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("1_c0kci")
+centered = false
+
+[node name="base" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("4_2mxkq")
+centered = false
+
+[node name="outline" type="Sprite2D" parent="Node2D"]
+position = Vector2(10, -2)
+texture = ExtResource("3_7r1bj")
+centered = false
+
+[node name="Node2D" type="Node2D" parent="Node2D"]
+
+[node name="francegreen" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("6_mmbmj")
+centered = false
+
+[node name="franceyellow" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("8_03bv8")
+centered = false
+
+[node name="franceorange" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("9_nrb64")
+centered = false
+
+[node name="francered" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("10_sfxao")
+centered = false
+
+[node name="germany" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("6_5kn13")
+centered = false
+
+[node name="spain" type="Sprite2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("7_wdjgo")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3272, 1209)
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(3281, 1463)
+scale = Vector2(0.892912, 0.0808823)
+texture = ExtResource("9_2apm0")
+
+[node name="ProgressBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("10_yt5y7")
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="ProgressBar/Label"]
+wait_time = 0.101
+autostart = true
+
+[node name="funds" type="ProgressBar" parent="ProgressBar/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.275
+anchor_top = 26.0654
+anchor_right = 5.275
+anchor_bottom = 26.0654
+offset_left = 2565.0
+offset_top = 849.496
+offset_right = 2787.0
+offset_bottom = 876.496
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxTexture_evejx")
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
+
+[node name="Label" type="Label" parent="ProgressBar/Label/funds"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.135
+anchor_top = 0.426
+anchor_right = -0.135
+anchor_bottom = 0.426
+offset_left = -20.03
+offset_top = -11.502
+offset_right = 19.97
+offset_bottom = 11.498
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Funds
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="global_emissions" type="ProgressBar" parent="ProgressBar/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 24.675
+anchor_top = 26.0654
+anchor_right = 24.675
+anchor_bottom = 26.0654
+offset_left = 2588.0
+offset_top = 849.496
+offset_right = 2810.0
+offset_bottom = 876.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxTexture_rixxq")
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ProgressBar/Label/global_emissions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.326982
+anchor_top = 0.5
+anchor_right = -0.326982
+anchor_bottom = 0.5
+offset_left = -65.41
+offset_top = -13.5
+offset_right = 65.59
+offset_bottom = 9.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Global Emissions"
+metadata/_edit_use_anchors_ = true
+
+[node name="planet_health_indicator" type="ProgressBar" parent="ProgressBar/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.25
+anchor_top = 26.0654
+anchor_right = 15.25
+anchor_bottom = 26.0654
+offset_left = 2588.0
+offset_top = 849.496
+offset_right = 2810.0
+offset_bottom = 876.496
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxTexture_5f0oj")
+show_percentage = false
+indeterminate = true
+editor_preview_indeterminate = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ProgressBar/Label/planet_health_indicator"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.590306
+anchor_top = 0.5
+anchor_right = -0.261477
+anchor_bottom = 0.5
+offset_left = -52.952
+offset_top = -13.5
+offset_right = 53.048
+offset_bottom = 9.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Planet Health Indicator"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="settings2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="timeout" from="ProgressBar/Label/Timer" to="ProgressBar" method="_on_timer_timeout"]

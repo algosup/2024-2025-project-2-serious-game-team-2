@@ -1,0 +1,376 @@
+[
+	{
+		"text": "Recently, France has introduced stricter emission standards for its public bus fleet. Has this change resulted in a decrease in CO2 emissions from buses?",
+		"effects": {
+			"Yes": { "GDP": -15, "R&D": 0.8, "Emissions": -4 },
+			"No": { "GDP": 0, "R&D": -0.6, "Emissions": 3 }
+		},
+		"output": {
+			"Yes": "Correct! The new emission standards have effectively reduced CO2 emissions from buses.",
+			"No": "Actually, the stricter emission standards have led to a decrease in CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "Over the past month, France has invested heavily in electric bus technology. Does this investment have no impact on the country's GDP?",
+		"effects": {
+			"Yes": { "GDP": -20, "R&D": -0.7, "Emissions": 4 },
+			"No": { "GDP": 0, "R&D": 0.9, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. The investment in electric bus technology does impact the GDP by reducing it due to high initial costs.",
+			"No": "Correct! The investment in electric bus technology affects the GDP negatively due to the substantial costs involved."
+		}
+	},
+	{
+		"text": "In the last two weeks, France has expanded its bus network to include more eco-friendly routes. Has this expansion led to increased R&D in sustainable transportation?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": 0.3, "Emissions": -2 },
+			"No": { "GDP": 0, "R&D": -0.4, "Emissions": 2 }
+		},
+		"output": {
+			"Yes": "Correct! Expanding the bus network has stimulated increased research and development in sustainable transportation.",
+			"No": "Actually, the expansion has led to an increase in R&D efforts focused on sustainable transportation."
+		}
+	},
+	{
+		"text": "Recently, France has reduced subsidies for diesel buses. Does this policy change have no effect on CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": -0.5, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Reducing subsidies for diesel buses actually affects CO2 emissions by decreasing them.",
+			"No": "Correct! The policy change has led to a reduction in CO2 emissions from diesel buses."
+		}
+	},
+	{
+		"text": "In the past three days, France has launched a campaign promoting the use of hybrid buses. Does this initiative result in no change to the country's GDP?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": -0.2, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. The campaign does impact GDP by slightly reducing it due to increased costs.",
+			"No": "Correct! The initiative affects GDP by causing a slight decrease due to the expenses involved."
+		}
+	},
+	{
+		"text": "Last month, France implemented a ban on old diesel buses in major cities. Has this ban led to higher CO2 emissions nationwide?",
+		"effects": {
+			"Yes": { "GDP": -18, "R&D": -0.9, "Emissions": 5 },
+			"No": { "GDP": 0, "R&D": 0.4, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Banning old diesel buses has actually resulted in lower CO2 emissions nationwide.",
+			"No": "Correct! The ban on old diesel buses has contributed to a decrease in CO2 emissions across the country."
+		}
+	},
+	{
+		"text": "Recently, France has increased fares for traditional diesel buses. Does this fare increase have no impact on R&D investments in the bus sector?",
+		"effects": {
+			"Yes": { "GDP": -7, "R&D": -0.3, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. The fare increase discourages investment in R&D by reducing available funds.",
+			"No": "Correct! Increasing fares has a negative impact on R&D investments in the bus sector."
+		}
+	},
+	{
+		"text": "In the last week, France has introduced free Wi-Fi on all city buses. Has this introduction led to a significant reduction in GDP?",
+		"effects": {
+			"Yes": { "GDP": -22, "R&D": 0.2, "Emissions": -5 },
+			"No": { "GDP": 0, "R&D": -0.1, "Emissions": 4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Introducing free Wi-Fi does not significantly reduce GDP; it may have a minor impact.",
+			"No": "Correct! The introduction of free Wi-Fi has not led to a significant reduction in GDP."
+		}
+	},
+	{
+		"text": "Over the past two weeks, France has subsidized electric buses extensively. Does this subsidy result in no change to CO2 emissions from buses?",
+		"effects": {
+			"Yes": { "GDP": -14, "R&D": -0.8, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.9, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Subsidizing electric buses actually decreases CO2 emissions.",
+			"No": "Correct! The subsidies have contributed to a reduction in CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "Recently, France has decreased the number of diesel buses in favor of electric ones. Has this decrease had no effect on the country's R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -9, "R&D": -0.4, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. The shift to electric buses has positively impacted the R&D sector.",
+			"No": "Correct! Reducing diesel buses has stimulated growth in the R&D sector."
+		}
+	},
+	{
+		"text": "In the last few days, France has launched a pilot program for autonomous buses. Does this program have no impact on GDP?",
+		"effects": {
+			"Yes": { "GDP": -13, "R&D": -0.5, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.8, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. The pilot program affects GDP by requiring significant investment.",
+			"No": "Correct! The autonomous bus program has an impact on GDP due to the investments involved."
+		}
+	},
+	{
+		"text": "Last month, France implemented low-emission zones restricting older buses. Has this implementation resulted in higher CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -17, "R&D": -0.6, "Emissions": 5 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Implementing low-emission zones has actually reduced CO2 emissions.",
+			"No": "Correct! The restrictions have led to a decrease in CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "Recently, France has offered tax incentives for companies developing green bus technologies. Do these incentives lead to no change in the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -11, "R&D": -0.3, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Tax incentives actually boost the R&D sector by providing more resources.",
+			"No": "Correct! The incentives have positively impacted the R&D sector."
+		}
+	},
+	{
+		"text": "In the past week, France has reduced the frequency of diesel buses. Has this reduction had no effect on CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": -0.2, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Reducing diesel bus frequency actually decreases CO2 emissions.",
+			"No": "Correct! The reduction in diesel buses has led to lower CO2 emissions."
+		}
+	},
+	{
+		"text": "Recently, France has allocated funds for the maintenance of existing bus fleets. Does this allocation result in no change to CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -8, "R&D": 0.1, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": -0.2, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Allocating funds for maintenance can help reduce CO2 emissions by improving efficiency.",
+			"No": "Correct! Funding maintenance has contributed to lowering CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "Over the past two days, France has launched a campaign to encourage the use of public buses over private cars. Has this campaign had no impact on the GDP?",
+		"effects": {
+			"Yes": { "GDP": -16, "R&D": -0.5, "Emissions": 4 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Encouraging public bus use can affect GDP by altering transportation spending.",
+			"No": "Correct! The campaign has influenced GDP by shifting spending from private cars to public buses."
+		}
+	},
+	{
+		"text": "Last month, France introduced electric buses without any government incentives. Does this introduction have no effect on the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -19, "R&D": -0.9, "Emissions": 5 },
+			"No": { "GDP": 0, "R&D": 0.4, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Introducing electric buses without incentives can negatively impact R&D by limiting resources.",
+			"No": "Correct! The introduction has affected the R&D sector despite the lack of incentives."
+		}
+	},
+	{
+		"text": "Recently, France has partnered with tech companies to develop greener bus technologies. Has this partnership led to no change in CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -14, "R&D": -0.6, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.8, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Partnering with tech companies has contributed to reducing CO2 emissions.",
+			"No": "Correct! The partnership has resulted in lower CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "In the last week, France has delayed the rollout of electric buses. Does this delay have no impact on the country's GDP?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": -0.4, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Delaying the rollout can negatively affect GDP due to prolonged reliance on less efficient buses.",
+			"No": "Correct! The delay has impacted GDP by maintaining higher emissions and operational costs."
+		}
+	},
+	{
+		"text": "Recently, France has increased the number of electric buses in its fleet. Has this increase resulted in higher CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": -0.3, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Increasing electric buses actually reduces CO2 emissions.",
+			"No": "Correct! The increase in electric buses has led to lower CO2 emissions."
+		}
+	},
+	{
+		"text": "Over the past month, France has cut funding for bus infrastructure projects. Does this funding cut have no effect on the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -17, "R&D": -0.8, "Emissions": 4 },
+			"No": { "GDP": 0, "R&D": 0.3, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Cutting funding negatively impacts the R&D sector by limiting resources.",
+			"No": "Correct! The reduction in funding has adversely affected the R&D sector."
+		}
+	},
+	{
+		"text": "Recently, France has implemented a new route exclusively for hybrid buses. Has this implementation had no impact on CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -9, "R&D": -0.2, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Implementing routes for hybrid buses helps reduce CO2 emissions.",
+			"No": "Correct! The new route for hybrid buses has contributed to lower CO2 emissions."
+		}
+	},
+	{
+		"text": "In the last few days, France has offered grants for research in electric bus technologies. Do these grants result in no change to the GDP?",
+		"effects": {
+			"Yes": { "GDP": -11, "R&D": 0.5, "Emissions": -2 },
+			"No": { "GDP": 0, "R&D": -0.5, "Emissions": 3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Offering grants can affect GDP by reallocating financial resources.",
+			"No": "Correct! The grants have had an impact on GDP by directing funds towards R&D."
+		}
+	},
+	{
+		"text": "Recently, France has reduced the number of bus routes in rural areas. Has this reduction led to higher CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -13, "R&D": -0.4, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Reducing bus routes in rural areas can lead to higher emissions due to increased reliance on private vehicles.",
+			"No": "Correct! The reduction has contributed to higher CO2 emissions as more people use private cars."
+		}
+	},
+	{
+		"text": "Over the past week, France has launched a new fleet of biofuel-powered buses. Does this launch have no effect on the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": -0.3, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Launching biofuel-powered buses stimulates the R&D sector by encouraging innovation.",
+			"No": "Correct! The new fleet has positively influenced the R&D sector."
+		}
+	},
+	{
+		"text": "Recently, France has extended the lifespan of existing diesel buses. Has this extension resulted in lower CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -14, "R&D": -0.5, "Emissions": 4 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Extending the lifespan of diesel buses typically increases CO2 emissions.",
+			"No": "Correct! The extension has led to higher CO2 emissions due to continued use of diesel buses."
+		}
+	},
+	{
+		"text": "In the last month, France has invested in solar-powered bus stops. Does this investment have no impact on the country's GDP?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": -0.4, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Investing in solar-powered bus stops affects GDP by reallocating funds.",
+			"No": "Correct! The investment has influenced GDP by directing resources towards sustainable infrastructure."
+		}
+	},
+	{
+		"text": "Recently, France has reduced the number of diesel buses without increasing electric alternatives. Has this reduction led to no change in CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -16, "R&D": -0.7, "Emissions": 5 },
+			"No": { "GDP": 0, "R&D": 0.3, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Reducing diesel buses without alternatives typically increases CO2 emissions.",
+			"No": "Correct! The reduction has resulted in higher CO2 emissions due to the lack of electric alternatives."
+		}
+	},
+	{
+		"text": "Over the past two weeks, France has provided training for drivers of electric buses. Does this training result in no change to the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -9, "R&D": -0.2, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Providing training supports the R&D sector by enhancing skills and knowledge.",
+			"No": "Correct! The training has positively impacted the R&D sector by improving expertise."
+		}
+	},
+	{
+		"text": "Recently, France has introduced congestion charges for buses in urban areas. Has this introduction had no impact on CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -11, "R&D": -0.3, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -4 }
+		},
+		"output": {
+			"Yes": "Incorrect. Introducing congestion charges typically reduces CO2 emissions by limiting bus usage.",
+			"No": "Correct! The congestion charges have contributed to lower CO2 emissions from buses."
+		}
+	},
+	{
+		"text": "In the last few days, France has postponed the deployment of hydrogen buses. Does this postponement result in no change to the GDP?",
+		"effects": {
+			"Yes": { "GDP": -15, "R&D": -0.6, "Emissions": 4 },
+			"No": { "GDP": 0, "R&D": 0.4, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Postponing hydrogen buses can negatively affect GDP due to delayed investments.",
+			"No": "Correct! The postponement has impacted GDP by delaying advancements in the bus sector."
+		}
+	},
+	{
+		"text": "Recently, France has increased the battery capacity of electric buses. Has this increase had no effect on the R&D sector?",
+		"effects": {
+			"Yes": { "GDP": -10, "R&D": -0.3, "Emissions": 2 },
+			"No": { "GDP": 0, "R&D": 0.7, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Increasing battery capacity encourages more R&D in energy storage technologies.",
+			"No": "Correct! The increase has positively influenced the R&D sector by fostering innovation."
+		}
+	},
+	{
+		"text": "Over the past month, France has limited the use of biofuel in buses. Does this limitation result in no change to CO2 emissions?",
+		"effects": {
+			"Yes": { "GDP": -13, "R&D": -0.5, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.5, "Emissions": -2 }
+		},
+		"output": {
+			"Yes": "Incorrect. Limiting biofuel use can lead to higher CO2 emissions if alternative fuels are not used.",
+			"No": "Correct! The limitation has resulted in increased CO2 emissions due to reduced biofuel usage."
+		}
+	},
+	{
+		"text": "Recently, France has implemented real-time tracking systems on buses. Has this implementation had no impact on the country's GDP?",
+		"effects": {
+			"Yes": { "GDP": -12, "R&D": -0.4, "Emissions": 3 },
+			"No": { "GDP": 0, "R&D": 0.6, "Emissions": -3 }
+		},
+		"output": {
+			"Yes": "Incorrect. Implementing tracking systems involves costs that can affect GDP.",
+			"No": "Correct! The implementation has influenced GDP by introducing new expenses."
+		}
+	}
+]
