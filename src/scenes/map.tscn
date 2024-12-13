@@ -325,7 +325,7 @@ offset_top = 975.0
 offset_right = 3055.0
 offset_bottom = 1139.0
 theme_override_font_sizes/font_size = 11
-text = "Health State:
+text = "Country Health State:
 🟢 Low Emissions: The country is within sustainable emission levels.  
 🟡 Moderate Emissions: Emissions are rising and require attention.  
 🟠 High Emissions: Emissions are critical, action is urgently needed.  
