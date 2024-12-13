@@ -1,0 +1,247 @@
+[gd_scene load_steps=10 format=3 uid="uid://wgv1wi4vpx7k"]
+
+[ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_eyv0f"]
+[ext_resource type="VideoStream" path="res://assets/video/output.ogv" id="2_kfgas"]
+[ext_resource type="Texture2D" uid="uid://bne5ywgvcy7vl" path="res://assets/btn/settings.png" id="3_jiqia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8xap"]
+bg_color = Color(0, 0.607843, 0.309804, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fua68"]
+bg_color = Color(0.0828792, 0.338518, 0.15332, 0.576471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiktu"]
+bg_color = Color(0.280384, 0.705934, 0.259778, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uemmh"]
+bg_color = Color(0.329158, 0.329158, 0.329158, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ouy7"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_2v7ag"]
+Button/styles/focus = SubResource("StyleBoxFlat_e8xap")
+Button/styles/hover = SubResource("StyleBoxFlat_fua68")
+Button/styles/normal = SubResource("StyleBoxFlat_aiktu")
+Button/styles/pressed = SubResource("StyleBoxFlat_uemmh")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_2ouy7")
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eyv0f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 0
+offset_right = 5840.0
+offset_bottom = 3360.0
+scale = Vector2(0.2, 0.2)
+stream = ExtResource("2_kfgas")
+autoplay = true
+expand = true
+loop = true
+
+[node name="play" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 12.6
+anchor_top = 4.2
+anchor_right = 16.2
+anchor_bottom = 7.8
+offset_top = -1.52588e-05
+
+[node name="play" type="Button" parent="CanvasLayer/Control/play"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.37
+anchor_right = 0.503
+anchor_bottom = 0.37
+offset_left = -75.4561
+offset_top = -31.76
+offset_right = 124.544
+offset_bottom = 40.24
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2v7ag")
+theme_override_colors/font_color = Color(0, 0, 0.878431, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/play/play"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 20.0
+offset_right = 125.0
+offset_bottom = 51.0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "PLAY
+"
+
+[node name="settings" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 3.15
+anchor_bottom = 3.0
+offset_top = -2.0
+offset_bottom = 6.99999
+
+[node name="settings" type="TextureButton" parent="CanvasLayer/Control/settings"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -306.0
+offset_right = -449.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_jiqia")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="howtoplay" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 313.0
+offset_top = 249.52
+offset_right = 649.0
+offset_bottom = 358.52
+pivot_offset = Vector2(24, 16)
+
+[node name="howtoplay" type="Button" parent="CanvasLayer/Control/howtoplay"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.519
+anchor_right = 0.587
+anchor_bottom = 0.63
+offset_left = 28.224
+offset_top = -48.312
+offset_right = 27.776
+offset_bottom = -48.24
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2v7ag")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/howtoplay/howtoplay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 59.536
+offset_right = 137.0
+offset_bottom = -48.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "How to play"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="quit" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 409.0
+offset_top = 249.52
+offset_right = 569.0
+offset_bottom = 313.52
+pivot_offset = Vector2(24, 16)
+
+[node name="quit" type="Button" parent="CanvasLayer/Control/quit"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.519
+anchor_right = 0.597
+anchor_bottom = 0.704
+offset_left = 96.192
+offset_top = 31.688
+offset_right = 16.256
+offset_bottom = -16.192
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2v7ag")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/quit/quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 56.536
+offset_right = 137.0
+offset_bottom = -51.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 22
+text = "quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/play/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/settings/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/howtoplay/howtoplay" to="." method="_on_howtoplay_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/quit/quit" to="." method="_on_quit_pressed"]

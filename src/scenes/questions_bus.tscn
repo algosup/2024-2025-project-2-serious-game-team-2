@@ -1,0 +1,226 @@
+[gd_scene load_steps=14 format=3 uid="uid://b5oq8mprb587t"]
+
+[ext_resource type="Script" path="res://scripts/questions_bus.gd" id="1_pruai"]
+[ext_resource type="Texture2D" uid="uid://b40ds7m5ecpdq" path="res://assets/clouds/4.png" id="2_ukonn"]
+[ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_ow1ig"]
+[ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_51muw"]
+[ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="5_8ec4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tgf6"]
+bg_color = Color(0, 0.607843, 0.309804, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtq4u"]
+bg_color = Color(0.0828792, 0.338518, 0.15332, 0.576471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sppt5"]
+bg_color = Color(0.280384, 0.705934, 0.259778, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3og4"]
+bg_color = Color(0.329158, 0.329158, 0.329158, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbgkb"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_ehqcv"]
+Button/styles/focus = SubResource("StyleBoxFlat_6tgf6")
+Button/styles/hover = SubResource("StyleBoxFlat_wtq4u")
+Button/styles/normal = SubResource("StyleBoxFlat_sppt5")
+Button/styles/pressed = SubResource("StyleBoxFlat_p3og4")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_pbgkb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oy6g"]
+bg_color = Color(0.862448, 0.00856696, 0.161079, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="Theme" id="Theme_1lpgb"]
+Button/styles/normal = SubResource("StyleBoxFlat_4oy6g")
+
+[node name="bus" type="Node2D"]
+script = ExtResource("1_pruai")
+
+[node name="Windows" type="ColorRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 659.0
+color = Color(0.329738, 0.661307, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Sprite2D" parent="Windows"]
+position = Vector2(587, 377)
+scale = Vector2(1.56364, 1.29837)
+texture = ExtResource("2_ukonn")
+
+[node name="back_button_bus" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1265.0
+offset_top = 98.0
+offset_right = 1483.0
+offset_bottom = 317.0
+
+[node name="back_button_bus" type="TextureButton" parent="back_button_bus"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.741
+anchor_top = -0.221
+anchor_right = -0.741
+anchor_bottom = -0.221
+offset_left = -75.462
+offset_top = 5.399
+offset_right = -22.462
+offset_bottom = 56.399
+texture_normal = ExtResource("3_ow1ig")
+texture_pressed = ExtResource("4_51muw")
+texture_hover = ExtResource("5_8ec4x")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="yes" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 240.0
+offset_top = 416.0
+offset_right = 426.0
+offset_bottom = 490.0
+pivot_offset = Vector2(24, 16)
+
+[node name="yes" type="Button" parent="yes"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.413
+anchor_top = 0.519
+anchor_right = 0.587
+anchor_bottom = 0.63
+offset_left = -163.776
+offset_top = 121.688
+offset_right = -164.224
+offset_bottom = 121.76
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ehqcv")
+
+[node name="Label" type="Label" parent="yes/yes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 59.536
+offset_right = 137.0
+offset_bottom = -48.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 65
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="no" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 2.375
+anchor_top = 2.162
+anchor_right = 2.375
+anchor_bottom = 2.162
+offset_left = 730.0
+offset_top = 414.0
+offset_right = 890.0
+offset_bottom = 478.0
+pivot_offset = Vector2(24, 16)
+
+[node name="no" type="Button" parent="no"]
+top_level = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.519
+anchor_right = 0.597
+anchor_bottom = 0.704
+offset_left = 223.192
+offset_top = 121.688
+offset_right = 143.256
+offset_bottom = 73.808
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1lpgb")
+
+[node name="Label" type="Label" parent="no/no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.563
+anchor_right = 0.5
+anchor_bottom = 1.437
+offset_left = -140.0
+offset_top = 56.536
+offset_right = 137.0
+offset_bottom = -51.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 17
+theme_override_font_sizes/font_size = 65
+text = "NO"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+max_lines_visible = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="effects" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 70.0
+offset_right = 1092.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+autowrap_mode = 2
+
+[node name="questions" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 122.0
+offset_right = 1082.0
+offset_bottom = 404.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "this is a question"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="back_button_bus/back_button_bus" to="." method="_on_back_button_bus_pressed"]
+[connection signal="pressed" from="yes/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="no/no" to="." method="_on_no_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
