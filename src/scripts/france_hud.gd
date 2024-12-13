@@ -90,7 +90,7 @@ func _ready():
 	$France/NuclearTimer.stop()
 
 	# Start GDP increment timer
-	$GDP_Timer.wait_time = 3
+	$GDP_Timer.wait_time = 6
 	$GDP_Timer.start()
 	
 	# Connect timers to respective signals

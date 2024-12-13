@@ -5,6 +5,7 @@ var settings = preload("res://scenes/settings.tscn")
 var map = preload("res://scenes/map.tscn")
 var home_screen = preload("res://scenes/home_screen.tscn")
 var france_hud = preload("res://scenes/france_hud.tscn")
+var howtoplay = preload("res://scenes/howtoplay.tscn")
 
 # Audio Players for music
 var intro_music = preload("res://assets/audio/intro.mp3")
