@@ -100,7 +100,6 @@ func _ready():
 	$France/MetalTimer.connect("timeout", Callable(self, "_on_metal_timer_timeout"))
 	$France/NuclearTimer.connect("timeout", Callable(self, "_on_nuclear_timer_timeout"))
 
-	$GDP_Timer.connect("timeout", Callable(self, "_on_gdp_timer_timeout"))
 
 	# Place icons randomly
 	place_icons_randomly()
