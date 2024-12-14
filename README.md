@@ -22,7 +22,7 @@ We are students at Algosup, an english IT school in France. Our team has 7 weeks
 
 ### Concept map
 
-<img alt="godot" src="documents\technical_specifications\images\WorldMapHUD.png" width=60% />
+<img alt="godot" src="documents\readme_images\france_hud.png" width=60% />
 
 ### Gameplay
 
