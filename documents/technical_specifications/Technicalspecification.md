@@ -78,7 +78,7 @@ Godot is a free and open-source game engine that offers a comprehensive set of t
       - [4. Integration with Game Systems](#4-integration-with-game-systems)
       - [5. Pseudo-code explanation: Upgrade](#5-pseudo-code-explanation-upgrade)
       - [6. Integration UI](#6-integration-ui)
-  - [VIII. Data Management \& Storage](#xiii-data-management--storage)
+  - [VIII. Data Management \& Storage](#viii-data-management--storage)
     - [a. Code Example for Country Data](#a-code-example-for-country-data)
     - [b. Why Use Dictionaries within Dictionaries? ?](#b-why-use-dictionaries-within-dictionaries-)
     - [c. Updates the storage](#c-updates-the-storage)
