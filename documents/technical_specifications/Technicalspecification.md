@@ -30,7 +30,7 @@ Godot is a free and open-source game engine that offers a comprehensive set of t
     - [a. Project](#a-project)
     - [b. Project Management](#b-project-management)
       - [1. What is GitHub?](#1-what-is-github)
-        - [1.1 **Project Tracking and Documentation**: GitHub allows teachers and team members to view, comment on, and review project progress in real-time. This level of visibility helps ensure that each member's contributions are tracked accurately, and issues can be flagged and addressed efficiently.](#11-project-tracking-and-documentation-github-allows-teachers-and-team-members-to-view-comment-on-and-review-project-progress-in-real-time-this-level-of-visibility-helps-ensure-that-each-members-contributions-are-tracked-accurately-and-issues-can-be-flagged-and-addressed-efficiently)
+        - [1.1 **Project Tracking and Documentation**:](#11-project-tracking-and-documentation)
       - [2. What is a Branch in Git?](#2-what-is-a-branch-in-git)
         - [1.1 Git Repository Structure](#11-git-repository-structure)
       - [3. How Does Git Work?](#3-how-does-git-work)
@@ -78,7 +78,7 @@ Godot is a free and open-source game engine that offers a comprehensive set of t
       - [4. Integration with Game Systems](#4-integration-with-game-systems)
       - [5. Pseudo-code explanation: Upgrade](#5-pseudo-code-explanation-upgrade)
       - [6. Integration UI](#6-integration-ui)
-  - [XIII. Data Management \& Storage](#xiii-data-management--storage)
+  - [VIII. Data Management \& Storage](#xiii-data-management--storage)
     - [a. Code Example for Country Data](#a-code-example-for-country-data)
     - [b. Why Use Dictionaries within Dictionaries? ?](#b-why-use-dictionaries-within-dictionaries-)
     - [c. Updates the storage](#c-updates-the-storage)
@@ -118,7 +118,8 @@ For effective project versioning and management, it is essential to use **GitHub
 
 **GitHub** is a powerful, web-based platform built around **Git**, a version control system that allows multiple contributors to track, manage, and collaborate on code and other project files seamlessly. Using GitHub for this project offers multiple advantages:
 
-##### 1.1 **Project Tracking and Documentation**: GitHub allows teachers and team members to view, comment on, and review project progress in real-time. This level of visibility helps ensure that each member's contributions are tracked accurately, and issues can be flagged and addressed efficiently.
+##### 1.1 **Project Tracking and Documentation**: 
+GitHub allows teachers and team members to view, comment on, and review project progress in real-time. This level of visibility helps ensure that each member's contributions are tracked accurately, and issues can be flagged and addressed efficiently.
 
 1. **Version Control and Recovery**: GitHub’s version control capabilities mean that every change made is saved as a snapshot, or “commit.” This allows us to easily track the evolution of the project over time. If files or code are deleted or corrupted, previous versions can be retrieved and restored effortlessly.
 
@@ -797,7 +798,7 @@ MainUI/
     └── ScientistMenu/
 ```
 
-## XIII. Data Management & Storage
+## VIII. Data Management & Storage
 
 The KnowledgeDatabase.gd script contains structured data for all available upgrades and solutions.
 
