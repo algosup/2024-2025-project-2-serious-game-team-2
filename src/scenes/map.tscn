@@ -220,6 +220,7 @@ text = "Funds
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltip" type="Label" parent="ProgressBar/Label/funds"]
+layout_mode = 0
 offset_left = -69.0
 offset_top = -117.0
 offset_right = 306.0
@@ -264,6 +265,7 @@ text = "Global Emissions"
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltip2" type="Label" parent="ProgressBar/Label/global_emissions"]
+layout_mode = 0
 offset_left = -94.0
 offset_top = -117.0
 offset_right = 281.0
@@ -308,6 +310,7 @@ text = "Planet Health Indicator"
 metadata/_edit_use_anchors_ = true
 
 [node name="tooltip3" type="Label" parent="ProgressBar/Label/planet_health_indicator"]
+layout_mode = 0
 offset_left = -95.0
 offset_top = -117.0
 offset_right = 280.0

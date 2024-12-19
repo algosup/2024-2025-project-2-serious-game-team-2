@@ -33,20 +33,20 @@ color = Color(0.329412, 0.662745, 0, 1)
 [node name="HSlider" type="HSlider" parent="CanvasLayer/Control"]
 top_level = true
 layout_mode = 0
-offset_left = 89.0
-offset_top = 199.0
-offset_right = 204.0
-offset_bottom = 215.0
+offset_left = 416.0
+offset_top = 230.0
+offset_right = 531.0
+offset_bottom = 246.0
 scale = Vector2(3, 3)
 value = 80.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 top_level = true
 layout_mode = 0
-offset_left = 174.0
-offset_top = 129.0
-offset_right = 329.0
-offset_bottom = 187.0
+offset_left = 501.0
+offset_top = 160.0
+offset_right = 656.0
+offset_bottom = 218.0
 theme_override_font_sizes/font_size = 42
 text = "Volume"
 

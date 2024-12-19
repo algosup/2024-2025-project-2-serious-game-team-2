@@ -29,12 +29,10 @@ func apply_question_effects(choice: String):
 		var output = current_question["output"].get(choice, "No additional information.")
 
 		# Display the effects of the choice
-		var effects_text = choice + " selected.\n"
-		effects_text += output + "\n\n"
+		var effects_text = output + "\n\n"
 		effects_text += "GDP: " + str(effects.get("GDP", 0)) + "\n"
 		effects_text += "R&D Progress: " + str(effects.get("R&D", 0)) + "\n"
-		effects_text += "NuclearValue: " + str(effects.get("NuclearValue", 0)) + "\n"
-
+		effects_text += "CementValue: " + str(effects.get("CementValue", 0)) + "\n"
 		# Update the effects label text
 		effects_label.text = effects_text
 		effects_label.visible = true

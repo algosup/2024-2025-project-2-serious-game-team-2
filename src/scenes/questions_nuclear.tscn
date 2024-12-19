@@ -198,15 +198,6 @@ vertical_alignment = 1
 uppercase = true
 max_lines_visible = 1
 
-[node name="effects" type="Label" parent="."]
-offset_left = 69.0
-offset_top = 70.0
-offset_right = 1092.0
-offset_bottom = 324.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-autowrap_mode = 2
-
 [node name="questions" type="Label" parent="."]
 offset_left = 71.0
 offset_top = 122.0
@@ -219,6 +210,15 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="effects" type="Label" parent="."]
+offset_left = 107.0
+offset_top = 126.0
+offset_right = 1016.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+autowrap_mode = 2
 
 [connection signal="pressed" from="back_button_nuclear/back_button_nuclear" to="." method="_on_back_button_nuclear_pressed"]
 [connection signal="pressed" from="yes/yes" to="." method="_on_yes_pressed"]
