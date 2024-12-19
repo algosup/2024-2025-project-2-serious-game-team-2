@@ -32,7 +32,7 @@ func apply_question_effects(choice: String):
 		var effects_text = output + "\n\n"
 		effects_text += "GDP: " + str(effects.get("GDP", 0)) + "\n"
 		effects_text += "R&D Progress: " + str(effects.get("R&D", 0)) + "\n"
-		effects_text += "CementValue: " + str(effects.get("CementValue", 0)) + "\n"
+		effects_text += "Bus Value: " + str(effects.get("BusValue", 0)) + "\n"
 
 		# Update the effects label text
 		effects_label.text = effects_text

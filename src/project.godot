@@ -14,11 +14,11 @@ enabled=false
 
 [application]
 
-config/name="Ecosphere"
+config/name="ecooo"
 run/main_scene="res://scenes/intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-config/icon="res://Leaf.png"
+config/icon="res://icon.svg"
 
 [autoload]
 
