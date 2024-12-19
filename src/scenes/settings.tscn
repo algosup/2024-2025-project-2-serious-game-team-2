@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2cly25odophv"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_v7wr0"]
+[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="2_lbyjl"]
+[ext_resource type="Texture2D" uid="uid://cv1vxfrdke5lt" path="res://assets/settings/92.png" id="3_gsf6r"]
+[ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="3_l0dir"]
+[ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="4_6r8xy"]
+[ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="5_28o5c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7wr0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 656.0
+color = Color(0.329412, 0.662745, 0, 1)
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control"]
+top_level = true
+layout_mode = 0
+offset_left = 416.0
+offset_top = 230.0
+offset_right = 531.0
+offset_bottom = 246.0
+scale = Vector2(3, 3)
+value = 80.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+top_level = true
+layout_mode = 0
+offset_left = 501.0
+offset_top = 160.0
+offset_right = 656.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 42
+text = "Volume"
+
+[node name="Bg" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(580, 326.5)
+scale = Vector2(0.893683, 0.669118)
+texture = ExtResource("2_lbyjl")
+
+[node name="92" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(571, 98)
+scale = Vector2(0.25, 0.26)
+texture = ExtResource("3_gsf6r")
+
+[node name="back_button" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1265.0
+offset_top = 98.0
+offset_right = 1483.0
+offset_bottom = 317.0
+
+[node name="back_button" type="TextureButton" parent="CanvasLayer/Control/back_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.741
+anchor_top = -0.221
+anchor_right = -0.741
+anchor_bottom = -0.221
+offset_left = -61.462
+offset_top = -8.601
+offset_right = -8.46199
+offset_bottom = 42.399
+texture_normal = ExtResource("3_l0dir")
+texture_pressed = ExtResource("4_6r8xy")
+texture_hover = ExtResource("5_28o5c")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="value_changed" from="CanvasLayer/Control/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/back_button/back_button" to="." method="_on_back_button_pressed"]

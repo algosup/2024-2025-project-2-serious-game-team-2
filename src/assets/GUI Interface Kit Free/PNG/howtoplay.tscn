@@ -1,0 +1,195 @@
+[gd_scene load_steps=7 format=3 uid="uid://bonwycv5ddlv3"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_o6o3m"]
+[ext_resource type="Texture2D" uid="uid://t5b7yenyees2" path="res://assets/shop/bg.png" id="2_bba12"]
+[ext_resource type="Texture2D" uid="uid://cmtdkk00qitek" path="res://assets/btn/close.png" id="4_1b00x"]
+[ext_resource type="Texture2D" uid="uid://dsms52h47nboj" path="res://assets/level_select/dot_d.png" id="5_tpidl"]
+[ext_resource type="Texture2D" uid="uid://dq3kuvqfgoba7" path="res://assets/btn/close_2.png" id="6_iylkb"]
+[ext_resource type="Texture2D" uid="uid://chivltkuv1oys" path="res://assets/settings/table.png" id="7_jjpom"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o6o3m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+z_index = 4
+layout_mode = 0
+offset_left = 438.0
+offset_top = 49.0
+offset_right = 681.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 50
+text = "Gameplay"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1159.0
+offset_bottom = 656.0
+color = Color(0.329412, 0.662745, 0, 1)
+
+[node name="Bg" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 3
+position = Vector2(582, 326)
+scale = Vector2(0.893683, 0.669118)
+texture = ExtResource("2_bba12")
+
+[node name="back_button" type="Control" parent="CanvasLayer/Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1265.0
+offset_top = 98.0
+offset_right = 1483.0
+offset_bottom = 317.0
+
+[node name="back_button" type="TextureButton" parent="CanvasLayer/Control/back_button"]
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.741
+anchor_top = -0.221
+anchor_right = -0.741
+anchor_bottom = -0.221
+offset_left = -61.462
+offset_top = -8.601
+offset_right = -8.46199
+offset_bottom = 42.399
+texture_normal = ExtResource("4_1b00x")
+texture_pressed = ExtResource("5_tpidl")
+texture_hover = ExtResource("6_iylkb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Table" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 5
+position = Vector2(387, 231)
+scale = Vector2(0.246447, 0.239929)
+texture = ExtResource("7_jjpom")
+
+[node name="Table2" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 4
+position = Vector2(762, 233)
+scale = Vector2(0.263162, 0.246816)
+texture = ExtResource("7_jjpom")
+
+[node name="Table3" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 4
+position = Vector2(386.734, 470.344)
+scale = Vector2(0.25541, 0.245631)
+texture = ExtResource("7_jjpom")
+
+[node name="Table4" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 4
+position = Vector2(769, 468)
+scale = Vector2(0.268788, 0.25311)
+texture = ExtResource("7_jjpom")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 267.0
+offset_top = 152.0
+offset_right = 409.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Left mouse click :"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 638.0
+offset_top = 154.0
+offset_right = 678.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Pins :"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 262.0
+offset_top = 391.0
+offset_right = 440.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Questions :"
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control"]
+z_index = 4
+layout_mode = 0
+offset_left = 639.0
+offset_top = 387.0
+offset_right = 739.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Progress bar :"
+
+[node name="Label6" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 268.0
+offset_top = 186.0
+offset_right = 484.0
+offset_bottom = 299.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Zooms, interacts with pins,
+validates, and opens menus 
+or settings."
+
+[node name="Label7" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 265.0
+offset_top = 428.0
+offset_right = 482.0
+offset_bottom = 503.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Questions provide learning
+opportunities, with answers
+affecting progress bars."
+
+[node name="Label8" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 638.0
+offset_top = 187.0
+offset_right = 881.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pins represent map categories,
+are clickable, appear randomly,
+and open questions."
+
+[node name="Label9" type="Label" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 641.0
+offset_top = 396.0
+offset_right = 895.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+Progress bars provide visual
+feedback on management;
+poor performance leads to game 
+over."
+
+[connection signal="pressed" from="CanvasLayer/Control/back_button/back_button" to="." method="_on_back_button_pressed"]

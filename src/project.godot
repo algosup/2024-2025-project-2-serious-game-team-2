@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[Mono]
+
+enabled=false
+
+[application]
+
+config/name="Ecosphere"
+run/main_scene="res://scenes/intro.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+config/icon="res://Leaf.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+Questions="*res://scripts/questions.gd"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="ecooo"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.290196, 0.564706, 0.886275, 1)
