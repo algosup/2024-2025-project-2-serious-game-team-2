@@ -34,8 +34,8 @@ Each weekly report covers a 5-day period. The end date matches the report’s fi
 
 | Week  | Start Date  | End Date    | Report Link                              |
 |-------|--------------|-------------|------------------------------------------|
-| Week 1| 11.04.2024   | 11.08.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.04.2024.md)]   |
-| Week 2| 11.11.2024   | 11.15.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.11.2024.md)]   |
+| Week 1| 11.04.2024   | 11.08.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.08.2024.md)]   |
+| Week 2| 11.11.2024   | 11.15.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.15.2024.md)]   |
 | Week 3| 11.18.2024   | 11.22.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.22.2024.md)]   |
 | Week 4| 11.25.2024   | 11.29.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/11.29.2024.md)]   |
 | Week 5| 12.02.2024   | 12.06.2024  | [[Click to be redirected.](https://github.com/algosup/2024-2025-project-2-serious-game-team-2/blob/main/documents/management/weekly/12.06.2024.md)]   |
